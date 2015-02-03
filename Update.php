@@ -1,3 +1,4 @@
+<?php @session_start(); ?>
 <?php require_once('Connections/WebCatalogue.php'); ?>
 <?php
 if (!isset($_SESSION)) {
@@ -83,7 +84,7 @@ if (isset($_SERVER['QUERY_STRING'])) {
 
 if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "UpdateForm")) {
   $updateSQL = sprintf("UPDATE users SET password=%s, url=%s, title=%s, `description`=%s WHERE userID=%s",
-                       GetSQLValueString($_POST['password'], "text"),
+                       GetSQLValueString($_POST['Password'], "text"),
                        GetSQLValueString($_POST['URL'], "text"),
                        GetSQLValueString($_POST['Title'], "text"),
                        GetSQLValueString($_POST['Description'], "text"),
@@ -166,9 +167,9 @@ $totalRows_ManageUsers = mysql_num_rows($ManageUsers);
               <td><table border="0">
                 <tr>
                   <td><label for="Password">Password:</label><br><br>
-                    <input name="Password" type="password" class="styletxtfield" id="Password" value="<?php echo $row_ManageUsers['password']; ?>"></td>
+                    <input name="Password" type="password" class="styletxtfield" id="Password" value="<?php echo $row_User['password']; ?>"></td>
                   <td><label for="PasswordConfirm">Confirm Password:</label><br><br>
-                    <input name="PasswordConfirm" type="password" class="styletxtfield" id="PasswordConfirm" value="<?php echo $row_ManageUsers['password']; ?>"></td>
+                    <input name="PasswordConfirm" type="password" class="styletxtfield" id="PasswordConfirm" value="<?php echo $row_User['password']; ?>"></td>
                 </tr>
               </table></td>
             </tr>
@@ -177,28 +178,28 @@ $totalRows_ManageUsers = mysql_num_rows($ManageUsers);
             </tr>
             <tr>
               <td><label for="Language">Language:</label><br><br>
-                <input name="Language" type="text" class="styletxtfield" id="Language" value="<?php echo $row_ManageUsers['language']; ?>"></td>
+                <input name="Language" type="text" class="styletxtfield" id="Language" value="<?php echo $row_User['language']; ?>"></td>
             </tr>
             <tr>
               <td>&nbsp;</td>
             </tr>
             <tr>
               <td><label for="URL">Url:</label><br><br>
-                <input name="URL" type="text" class="styletxtfield" id="URL" value="<?php echo $row_ManageUsers['url']; ?>"></td>
+                <input name="URL" type="text" class="styletxtfield" id="URL" value="<?php echo $row_User['url']; ?>"></td>
             </tr>
             <tr>
               <td>&nbsp;</td>
             </tr>
             <tr>
               <td><label for="Title">Title:</label><br><br>
-                <input name="Title" type="text" class="styletxtfield" id="Title" value="<?php echo $row_ManageUsers['title']; ?>"></td>
+                <input name="Title" type="text" class="styletxtfield" id="Title" value="<?php echo $row_User['title']; ?>"></td>
             </tr>
             <tr>
               <td>&nbsp;</td>
             </tr>
             <tr>
               <td><label for="Description">Description:</label><br><br>
-                <input name="Description" type="text" class="styletxtfield" id="Description" value="<?php echo $row_ManageUsers['description']; ?>"></td>
+                <input name="Description" type="text" class="styletxtfield" id="Description" value="<?php echo $row_User['description']; ?>"></td>
             </tr>
             <tr>
               <td>&nbsp;</td>
