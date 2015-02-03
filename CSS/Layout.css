@@ -1,0 +1,105 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+
+#Holder {
+	width: 980px;
+	height: auto;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 21px;
+	margin-bottom: 21px;
+}
+
+#Header {
+	height: 70px;
+	background-image: url(../Assets/img/logo.png);
+	background-repeat: no-repeat;
+	margin-bottom: 11px;
+}
+
+#NavBar {
+	height: 60px;
+	background-color: rgb(13, 13, 13);
+}
+
+#Content {
+	height: auto;
+	clear: both;
+	overflow: auto;
+}
+
+#contentLeft {
+	width: 280px;
+	float: left;
+	padding-left: 11px;
+	padding-top: 11px;
+}
+
+#contentLeft a {
+	text-decoration:none;
+	color:#000000;
+}
+
+#contentRight {
+	width: 680px;
+	float: right;
+}
+
+#PageHeading {
+	height: auto;
+	padding: 11px;
+}
+
+#Footer {
+	border-top: 1px solid #000000;
+	height: 100px;
+}
+
+#Footer a {
+	text-decoration:none;
+	color:#000000;
+	float:left;
+	display:block;
+}
+
+#Footer a:hover {
+	background-color:#F3E9E9;
+	color: #433E3E;
+}
+
+
+h1 {
+	margin: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #666;
+}
+
+h2 {
+	margin: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #999;
+	font-weight: lighter;
+}
+
+h6 {
+	margin: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #333;
+	font-weight: lighter;
+	font-size: 14px;
+}
+
+.styletxtfield {
+	border: 1px solid #666;
+	border-radius:6px;
+	width:200px;
+	height:35px;
+	font-family:Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	padding-left:6px;
+}
+
+.TableStyle {
+		border:hidden;
+}
