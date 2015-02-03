@@ -123,7 +123,7 @@ $totalRows_ManageUsers = mysql_num_rows($ManageUsers);
 <link href="CSS/Menu.css" rel="stylesheet" type="text/css">
 
 <meta charset="utf-8">
-<title>Untitled Document</title>
+<title>Update Account</title>
 </head>
 
 <body>
@@ -166,9 +166,9 @@ $totalRows_ManageUsers = mysql_num_rows($ManageUsers);
               <td><table border="0">
                 <tr>
                   <td><label for="Password">Password:</label><br><br>
-                    <input name="Password" type="password" class="styletxtfield" id="Password" value="<?php echo $row_User['password']; ?>"></td>
+                    <input name="Password" type="password" class="styletxtfield" id="Password" value="<?php echo $row_ManageUsers['password']; ?>"></td>
                   <td><label for="PasswordConfirm">Confirm Password:</label><br><br>
-                    <input name="PasswordConfirm" type="password" class="styletxtfield" id="PasswordConfirm" value="<?php echo $row_User['password']; ?>"></td>
+                    <input name="PasswordConfirm" type="password" class="styletxtfield" id="PasswordConfirm" value="<?php echo $row_ManageUsers['password']; ?>"></td>
                 </tr>
               </table></td>
             </tr>
@@ -177,28 +177,28 @@ $totalRows_ManageUsers = mysql_num_rows($ManageUsers);
             </tr>
             <tr>
               <td><label for="Language">Language:</label><br><br>
-                <input name="Language" type="text" class="styletxtfield" id="Language" value="<?php echo $row_User['language']; ?>"></td>
+                <input name="Language" type="text" class="styletxtfield" id="Language" value="<?php echo $row_ManageUsers['language']; ?>"></td>
             </tr>
             <tr>
               <td>&nbsp;</td>
             </tr>
             <tr>
               <td><label for="URL">Url:</label><br><br>
-                <input name="URL" type="text" class="styletxtfield" id="URL" value="<?php echo $row_User['url']; ?>"></td>
+                <input name="URL" type="text" class="styletxtfield" id="URL" value="<?php echo $row_ManageUsers['url']; ?>"></td>
             </tr>
             <tr>
               <td>&nbsp;</td>
             </tr>
             <tr>
               <td><label for="Title">Title:</label><br><br>
-                <input name="Title" type="text" class="styletxtfield" id="Title" value="<?php echo $row_User['title']; ?>"></td>
+                <input name="Title" type="text" class="styletxtfield" id="Title" value="<?php echo $row_ManageUsers['title']; ?>"></td>
             </tr>
             <tr>
               <td>&nbsp;</td>
             </tr>
             <tr>
               <td><label for="Description">Description:</label><br><br>
-                <input name="Description" type="text" class="styletxtfield" id="Description" value="<?php echo $row_User['description']; ?>"></td>
+                <input name="Description" type="text" class="styletxtfield" id="Description" value="<?php echo $row_ManageUsers['description']; ?>"></td>
             </tr>
             <tr>
               <td>&nbsp;</td>

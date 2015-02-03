@@ -122,7 +122,7 @@ $totalRows_ManageUsers = mysql_num_rows($ManageUsers);
 </script>
 
 <meta charset="utf-8">
-<title>Untitled Document</title>
+<title>My Account</title>
 </head>
 
 <body>
