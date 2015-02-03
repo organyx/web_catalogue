@@ -4,7 +4,7 @@ if (!isset($_SESSION)) {
   session_start();
 }
 $MM_authorizedUsers = "1";
-$MM_donotCheckaccess = "false";
+$MM_donotCheckaccess = "true";
 
 // *** Restrict Access To Page: Grant or deny access to this page
 function isAuthorized($strUsers, $strGroups, $UserName, $UserGroup) { 
@@ -25,7 +25,7 @@ function isAuthorized($strUsers, $strGroups, $UserName, $UserGroup) {
     if (in_array($UserGroup, $arrGroups)) { 
       $isValid = true; 
     } 
-    if (($strUsers == "") && false) { 
+    if (($strUsers == "") && true) { 
       $isValid = true; 
     } 
   } 
