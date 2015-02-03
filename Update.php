@@ -142,7 +142,7 @@ $totalRows_ManageUsers = mysql_num_rows($ManageUsers);
   </div>
   <div id="Content">
     	<div id="PageHeading">
-    	  <h2>Welcome,  <?php echo $row_User['first_name']; ?> <?php echo $row_User['last_name']; ?>!</h2>
+    	  <h1>Welcome,  <?php echo $row_User['first_name']; ?> <?php echo $row_User['last_name']; ?>!</h1>
       </div>
     	<div id="contentLeft">
     	  <h2>Your Message</h2><br>

@@ -45,11 +45,13 @@ body {
 #contentRight {
 	width: 680px;
 	float: right;
+	border-left: 1px solid #000000;
 }
 
 #PageHeading {
 	height: auto;
 	padding: 11px;
+	border-bottom:1px solid #000000;
 }
 
 #Footer {

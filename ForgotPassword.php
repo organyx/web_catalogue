@@ -27,14 +27,23 @@
     	  <h1>Forgot Password</h1>
    	  </div>
     	<div id="contentLeft">
-    	  <h2>&nbsp;</h2><br>
-    	  <h6>Type in your email to recieve your password</h6>
+    	  
+    	  <h6>Type in your email <br>to recieve your password</h6>
     	</div>
     <div id="contentRight">
-      <form action="EMPW-Script.php" method="post" name="EMPWForm" id="EMPWForm">
-        <label for="EMPWEmail"><h6>Email:</h6><br></label>
-        <input name="EMPWEmail" type="text" class="StyleTextField" id="EMPWEmail">
-        <input type="submit" name="EMPWButton" id="EMPWButton" value="Email Password">
+      <form action="EMPW-Script.php" method="post" name="EMPWForm" id="EMPWForm"> 
+      <table width="500" border="0" align="center">
+        <tr>
+          <td> <label for="EMPWEmail"><h6>Email:</h6><br></label>
+        		<input name="EMPWEmail" type="text" class="styletxtfield" id="EMPWEmail"></td>
+        </tr>
+        <tr>
+          <td><input type="submit" name="EMPWButton" id="EMPWButton" value="Email Password"></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+      </table>
       </form>
     </div>
   </div>
