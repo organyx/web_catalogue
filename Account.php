@@ -145,8 +145,8 @@ h1,h2,h3,h4,h5,h6 {
   </div>
   <div id="Content">
     	<div id="PageHeading">
-    	  <h1>Welcome,  <?php echo $row_User['first_name']; ?> <?php echo $row_User['last_name']; ?>!</h1>
-   	  </div>
+    	  <h2>Welcome,  <?php echo $row_User['first_name']; ?> <?php echo $row_User['last_name']; ?>!</h2>
+      </div>
     	<div id="contentLeft">
     	  <h2>Your Message</h2><br>
     	  <h2><a href="Update.php">Update Account</a></h2><br>
