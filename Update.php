@@ -83,8 +83,9 @@ if (isset($_SERVER['QUERY_STRING'])) {
 }
 
 if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "UpdateForm")) {
-  $updateSQL = sprintf("UPDATE users SET password=%s, url=%s, title=%s, `description`=%s WHERE userID=%s",
+  $updateSQL = sprintf("UPDATE users SET password=%s, language=%s, url=%s, title=%s, `description`=%s WHERE userID=%s",
                        GetSQLValueString($_POST['Password'], "text"),
+					   GetSQLValueString($_POST['Language'], "text"),
                        GetSQLValueString($_POST['URL'], "text"),
                        GetSQLValueString($_POST['Title'], "text"),
                        GetSQLValueString($_POST['Description'], "text"),
