@@ -108,15 +108,7 @@ $queryString_ManageUsers = sprintf("&totalRows_ManageUsers=%d%s", $totalRows_Man
 		$(".fancybox").fancybox();
 	});
 </script>				
-                    
- 
 
-
-<style type="text/css">
-h1,h2,h3,h4,h5,h6 {
-	font-weight: lighter;
-}
-</style>
 <meta charset="utf-8">
 <title>Main</title>
 </head>
@@ -137,7 +129,7 @@ h1,h2,h3,h4,h5,h6 {
   </div>
   <div id="Content">
     	<div id="PageHeading">
-    	  <h2>Main </h2>
+    	  <h1>Main</h1>
       </div>
     	<div id="contentLeft">
     	  <h2><a href="Account.php">Account</a></h2>

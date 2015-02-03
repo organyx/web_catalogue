@@ -120,11 +120,7 @@ $totalRows_ManageUsers = mysql_num_rows($ManageUsers);
 		$(".fancybox").fancybox();
 	});
 </script>
-<style type="text/css">
-h1,h2,h3,h4,h5,h6 {
-	font-weight: lighter;
-}
-</style>
+
 <meta charset="utf-8">
 <title>Untitled Document</title>
 </head>
@@ -145,7 +141,7 @@ h1,h2,h3,h4,h5,h6 {
   </div>
   <div id="Content">
     	<div id="PageHeading">
-    	  <h2>Welcome,  <?php echo $row_User['first_name']; ?> <?php echo $row_User['last_name']; ?>!</h2>
+    	  <h1>Welcome,  <?php echo $row_User['first_name']; ?> <?php echo $row_User['last_name']; ?>!</h1>
       </div>
     	<div id="contentLeft">
     	  <h2>Your Message</h2><br>

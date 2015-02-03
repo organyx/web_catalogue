@@ -86,11 +86,7 @@ if (isset($_POST['UserName'])) {
 <head>
 <link href="CSS/Layout.css" rel="stylesheet" type="text/css">
 <link href="CSS/Menu.css" rel="stylesheet" type="text/css">
-<style type="text/css">
-h1,h2,h3,h4,h5,h6 {
-	font-weight: lighter;
-}
-</style>
+
 <meta charset="utf-8">
 <title>Log In</title>
 </head>
