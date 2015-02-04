@@ -133,7 +133,7 @@ $queryString_ManageUsers = sprintf("&totalRows_ManageUsers=%d%s", $totalRows_Man
       </div>
     	<div id="contentLeft">
     	  <h2><a href="Account.php">Account</a></h2>
-<br>
+			<br>
     	  <h6>links</h6>
     	</div>
     <div id="contentRight">

@@ -144,11 +144,10 @@ $totalRows_ManageUsers = mysql_num_rows($ManageUsers);
     	  <h1>Welcome,  <?php echo $row_User['first_name']; ?> <?php echo $row_User['last_name']; ?>!</h1>
       </div>
     	<div id="contentLeft">
-    	  <h2>Your Message</h2><br>
+    	  <h2>Account info</h2><br>
     	  <h2><a href="Update.php">Update Account</a></h2><br>
     	  <h2><a href="LogOut.php">Log Out</a></h2><br>
     	  <br>
-    	  <h6>Your message</h6>
     	</div>
     <div id="contentRight">
       <table width="630" border="0" align="center">
