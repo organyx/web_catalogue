@@ -51,7 +51,8 @@ if (isset($_GET['accesscheck'])) {
 
 if (isset($_POST['UserName'])) {
   $loginUsername=$_POST['UserName'];
-  $password=$_POST['Password'];
+  $enc_pass = aes_encrypt($_POST['Password']);
+  $password=base64_encode($enc_pass);
   $MM_fldUserAuthorization = "Userlevel";
   $MM_redirectLoginSuccess = "Account.php";
   $MM_redirectLoginFailed = "Login.php";

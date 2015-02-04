@@ -1,4 +1,6 @@
-<?php @session_start(); ?>
+<?php @session_start(); 
+	require_once('Helpers/security.php');
+	?>
 <?php require_once('Connections/WebCatalogue.php'); ?>
 <?php
 if (!isset($_SESSION)) {
@@ -46,6 +48,8 @@ if (!((isset($_SESSION['MM_Username'])) && (isAuthorized("",$MM_authorizedUsers,
 }
 ?>
 <?php
+
+
 if (!function_exists("GetSQLValueString")) {
 function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
 {
@@ -82,9 +86,16 @@ if (isset($_SERVER['QUERY_STRING'])) {
   $editFormAction .= "?" . htmlentities($_SERVER['QUERY_STRING']);
 }
 
+if(isset($_POST["MM_update"]))
+{
+	$passwordConfirm = $_POST['Password'];
+	$secure_password = aes_encrypt($passwordConfirm);
+	$secure_password = base64_encode($secure_password);
+}
+
 if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "UpdateForm")) {
   $updateSQL = sprintf("UPDATE users SET password=%s, language=%s, url=%s, title=%s, `description`=%s WHERE userID=%s",
-                       GetSQLValueString($_POST['Password'], "text"),
+                       GetSQLValueString($secure_password, "text"),
 					   GetSQLValueString($_POST['Language'], "text"),
                        GetSQLValueString($_POST['URL'], "text"),
                        GetSQLValueString($_POST['Title'], "text"),
@@ -169,14 +180,15 @@ $totalRows_ManageUsers = mysql_num_rows($ManageUsers);
               <td><table border="0">
                 <tr>
                   <td><label for="Password">Password:</label><br><br>
-                    <input name="Password" type="password" class="styletxtfield" id="Password" value="<?php echo $row_User['password']; ?>"></td>
+                    <input name="Password" type="password" class="styletxtfield" id="Password" value="<?php $dec_pass = base64_decode($row_User['password']); echo aes_decrypt($dec_pass);  ?>"></td>
                   <td><label for="PasswordConfirm">Confirm Password:</label><br><br>
-                    <input name="PasswordConfirm" type="password" class="styletxtfield" id="PasswordConfirm" value="<?php echo $row_User['password']; ?>"></td>
+                    <input name="PasswordConfirm" type="password" class="styletxtfield" id="PasswordConfirm" value="<?php $dec_pass = base64_decode($row_User['password']); echo aes_decrypt($dec_pass);  ?>"></td>
                 </tr>
               </table></td>
             </tr>
             <tr>
-              <td>&nbsp;</td>
+              <td><label for="textfield">Text Field:</label>
+                <input name="textfield" type="text" id="textfield" value="<?php $dec_pass = base64_decode($row_User['password']); echo aes_decrypt($dec_pass)."";  ?>"></td>
             </tr>
             <tr>
               <td><label for="Language">Language:</label><br><br>

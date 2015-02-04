@@ -24,6 +24,6 @@ function aes_decrypt($val)
 {
 	$key = mysql_aes_key('Ralf_S_Engelschall__trainofthoughts');
 	$val = mcrypt_decrypt(MCRYPT_RIJNDAEL_128, $key, $val, MCRYPT_MODE_ECB, mcrypt_create_iv( mcrypt_get_iv_size(MCRYPT_RIJNDAEL_128, MCRYPT_MODE_ECB), MCRYPT_DEV_URANDOM));
-	return rtrim($val, "..16");
+	return rtrim($val, ".16");
 }
 ?>
