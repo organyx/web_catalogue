@@ -1,5 +1,5 @@
 <?php require_once('Connections/WebCatalogue.php'); ?>
-
+<?php require_once('Helpers/security.php'); ?>
 <?php
 
 	
@@ -64,6 +64,10 @@ if (isset($_POST[$MM_flag])) {
     header ("Location: $MM_dupKeyRedirect");
     exit;
   }
+  else
+  {
+	  $secure_password = aes_encrypt($passwordConfirm);
+  }
   
   $default_picture = "Assets/img/default.png/";
   $user_folder_path = "Assets/img/" . $_POST['Email'] . "/";
@@ -123,6 +127,8 @@ if (isset($_POST[$MM_flag])) {
 
 
 
+
+
 $editFormAction = $_SERVER['PHP_SELF'];
 if (isset($_SERVER['QUERY_STRING'])) {
   $editFormAction .= "?" . htmlentities($_SERVER['QUERY_STRING']);
@@ -131,7 +137,7 @@ if (isset($_SERVER['QUERY_STRING'])) {
 if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "RegisterForm")) {
   $insertSQL = sprintf("INSERT INTO users (email, password, first_name, last_name, `language`, url, title, `description`, preview, preview_thumb) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
                        GetSQLValueString($_POST['Email'], "text"),
-                       GetSQLValueString($_POST['Password'], "text"),
+                       GetSQLValueString($secure_password, "text"),
                        GetSQLValueString($_POST['FirstName'], "text"),
                        GetSQLValueString($_POST['LastName'], "text"),
                        GetSQLValueString($_POST['Language'], "text"),

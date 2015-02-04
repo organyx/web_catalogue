@@ -48,6 +48,11 @@ body {
 	border-left: 1px solid #000000;
 }
 
+#contentRight a {
+	text-decoration:none;
+	color:#000000;
+}
+
 #PageHeading {
 	height: auto;
 	padding: 11px;
