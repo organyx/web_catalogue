@@ -29,4 +29,28 @@ function aes_decrypt($val)
 	$val = mcrypt_decrypt(MCRYPT_RIJNDAEL_128, $key, $val, MCRYPT_MODE_ECB, mcrypt_create_iv( mcrypt_get_iv_size(MCRYPT_RIJNDAEL_128, MCRYPT_MODE_ECB), MCRYPT_DEV_URANDOM));
 	return rtrim($val, ".16");
 }
+
+
+
+$pass = "iepazisanasportali";
+$fullyencpass = base64_encode(aes_encrypt($pass));
+
 ?>
+<hmtl>
+<head>
+</head>
+<body>
+	<?php 
+
+echo "<p>normal: ". $pass ."</p><br>";
+echo "<p>normal encoded: ". $fullyencpass ."</p><br>";
+
+		
+
+echo "<p>aes enc: " . aes_encrypt($pass) . "</p><br>";
+echo "<p>aes enc + base64: " . base64_encode(aes_encrypt($pass)) . "</p><br>";
+echo "<p>base64: " . base64_decode($fullyencpass) . "</p><br>";
+echo "<p>base64 + aes dec: " . aes_decrypt(base64_decode($fullyencpass)) . "</p><br>";
+	?>
+</body>
+</hmtl>

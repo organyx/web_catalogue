@@ -164,7 +164,7 @@ $totalRows_ManageUsers = mysql_num_rows($ManageUsers);
     	  <h2><a href="Update.php">Update Account</a></h2><br>
     	  <h2><a href="LogOut.php">Log Out</a></h2><br>
     	  <br>
-    	  <h6>Your message</h6>
+    	  <h6>&nbsp;</h6>
     	</div>
     <div id="contentRight">
       <table width="630" border="0" align="center">
@@ -187,8 +187,7 @@ $totalRows_ManageUsers = mysql_num_rows($ManageUsers);
               </table></td>
             </tr>
             <tr>
-              <td><label for="textfield">Text Field:</label>
-                <input name="textfield" type="text" id="textfield" value="<?php $dec_pass = base64_decode($row_User['password']); echo aes_decrypt($dec_pass)."";  ?>"></td>
+              <td>&nbsp;</td>
             </tr>
             <tr>
               <td><label for="Language">Language:</label><br><br>
