@@ -121,6 +121,7 @@ $totalRows_ManageUsers = mysql_num_rows($ManageUsers);
 <!doctype html>
 <html>
 <head>
+
 <link href="CSS/Layout.css" rel="stylesheet" type="text/css">
 <link href="CSS/Menu.css" rel="stylesheet" type="text/css">
 

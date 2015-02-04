@@ -84,6 +84,7 @@ if (isset($_POST['UserName'])) {
 <!doctype html>
 <html>
 <head>
+
 <link href="CSS/Layout.css" rel="stylesheet" type="text/css">
 <link href="CSS/Menu.css" rel="stylesheet" type="text/css">
 
@@ -116,6 +117,9 @@ if (isset($_POST['UserName'])) {
     <div id="contentRight">
       <form ACTION="<?php echo $loginFormAction; ?>" id="LoginForm" name="LoginForm" method="POST">
         <table width="400" border="0" align="center">
+          <tr>
+            <td>&nbsp;</td>
+          </tr>
           <tr>
             <td><label for="UserName"><h6>Username:</h6><br>
               

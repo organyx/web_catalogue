@@ -95,11 +95,12 @@ $totalRows_ManageUsers = mysql_num_rows($ManageUsers);
 <!doctype html>
 <html>
 <head>
-<link href="CSS/Layout.css" rel="stylesheet" type="text/css">
-<link href="CSS/Menu.css" rel="stylesheet" type="text/css">
+
 <script src="Javascript/jquery-2.1.3.min.js" type="text/javascript"></script>
 
-<link href="CSS/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+<link href="CSS/Layout.css" rel="stylesheet" type="text/css">
+<link href="CSS/Menu.css" rel="stylesheet" type="text/css">
 
 <script src="Javascript/bootstrap.min.js" type="text/javascript"></script>
 
@@ -155,7 +156,7 @@ $totalRows_ManageUsers = mysql_num_rows($ManageUsers);
           <td>Account: <?php echo $row_User['email']; ?></td>
         </tr>
         <tr>
-          <td><table width="500" border="1" align="center">
+          <td><table width="500" align="center" border="1" class="TableStyle">
             <tr>
               <td align="right" valign="top">&nbsp;</td>
               <td align="right" valign="top">Registration date : </td>

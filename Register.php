@@ -165,6 +165,7 @@ $totalRows_Registration = mysql_num_rows($Registration);
 <!doctype html>
 <html>
 <head>
+
 <link href="CSS/Layout.css" rel="stylesheet" type="text/css">
 <link href="CSS/Menu.css" rel="stylesheet" type="text/css">
 
@@ -200,11 +201,11 @@ $totalRows_Registration = mysql_num_rows($Registration);
           <tr>
             <td><table border="0">
               <tr>
-                <td><label for="FirstName"><h6>First Name * :</h6></label>
+                <td><label for="FirstName"><h6>First Name * :</h6><br></label>
                   
                     <input name="FirstName" type="text" required="required" class="styletxtfield" id="FirstName">
                   </td>
-                <td><label for="LastName"><h6>Last Name:</h6></label>
+                <td><label for="LastName"><h6>Last Name:</h6><br></label>
                   <input name="LastName" type="text" class="styletxtfield" id="LastName"></td>
               </tr>
             </table></td>
@@ -289,9 +290,6 @@ $totalRows_Registration = mysql_num_rows($Registration);
           </tr>
           <tr>
             <td><input type="submit" name="RegisterButton" id="RegisterButton" value="Register"></td>
-          </tr>
-          <tr>
-            <td>&nbsp;</td>
           </tr>
           <tr>
             <td>&nbsp;</td>

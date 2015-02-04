@@ -83,11 +83,12 @@ $queryString_ManageUsers = sprintf("&totalRows_ManageUsers=%d%s", $totalRows_Man
 ?>
 <!doctype html>
 <html><head>
+
 <link href="CSS/Layout.css" rel="stylesheet" type="text/css">
 <link href="CSS/Menu.css" rel="stylesheet" type="text/css">
 <script src="Javascript/jquery-2.1.3.min.js" type="text/javascript"></script>
 
-<link href="CSS/bootstrap.min.css" rel="stylesheet" type="text/css">
+
 
 <script src="Javascript/bootstrap.min.js" type="text/javascript"></script>
 
@@ -145,6 +146,7 @@ $queryString_ManageUsers = sprintf("&totalRows_ManageUsers=%d%s", $totalRows_Man
           <td align="center" valign="top"><?php if ($totalRows_ManageUsers > 0) { // Show if recordset not empty ?>
             <?php do { ?>
                 <table width="630" border="1" class="TableStyle">
+                
                   <tr>
                     <td width="400" height="33" align="center"><?php echo $row_ManageUsers['title']; ?></td>
                      <td width="180" height="50" rowspan="3">
