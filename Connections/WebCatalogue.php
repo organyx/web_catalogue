@@ -14,6 +14,8 @@ $database_WebCatalogue = $database;
 $username_WebCatalogue = $username;
 $password_WebCatalogue = $password;
 
+$DBH = new PDO("mysql:host=$hostname_WebCatalogue;dbname=$database_WebCatalogue", $username_WebCatalogue, $password_WebCatalogue);
+
 /*
 $hostname_WebCatalogue = "localhost";
 $database_WebCatalogue = "web_catalogue";
