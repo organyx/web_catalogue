@@ -105,6 +105,15 @@ h6 {
 	padding-left:6px;
 }
 
+.styletxtarea {
+	border: 1px solid #666;
+	border-radius:6px;
+	width:350px;
+	height:100px;
+	font-family:Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	padding-left:6px;
+}
+
 .TableStyle {
 	border:hidden;
 	border-spacing: 0px;
@@ -127,3 +136,5 @@ h6 {
 	-o-transition:all .2s ease-in-out;
 	transition:all .2s ease-in-out;
 }
+
+

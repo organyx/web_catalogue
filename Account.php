@@ -102,7 +102,7 @@ $totalRows_ManageUsers = mysql_num_rows($ManageUsers);
 <link href="CSS/Layout.css" rel="stylesheet" type="text/css">
 <link href="CSS/Menu.css" rel="stylesheet" type="text/css">
 
-<script src="Javascript/bootstrap.min.js" type="text/javascript"></script>
+
 
 <!-- Add fancyBox -->
 <link rel="stylesheet" href="fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />

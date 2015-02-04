@@ -273,7 +273,7 @@ $totalRows_Registration = mysql_num_rows($Registration);
             <td><label for="Description"><h6>Description * :</h6>
               <br>
             </label>
-            <textarea name="Description" required class="styletxtfield" id="Description"></textarea></td>
+            <textarea name="Description" required class="styletxtarea" id="Description"></textarea></td>
           </tr>
           <tr>
             <td>&nbsp;</td>
