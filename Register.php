@@ -200,7 +200,7 @@ $totalRows_Registration = mysql_num_rows($Registration);
    	  </div>
     	<div id="contentLeft">
     	  <h2>Please fill in your information.</h2><br>
-    	  <h6>* fields are required</h6>
+    	  <h6><span class="required">*</span> fields are required</h6>
     	</div>
     <div id="contentRight">
       <form action="<?php echo $editFormAction; ?>" method="POST" enctype="multipart/form-data" name="RegisterForm" id="RegisterForm">
@@ -208,7 +208,7 @@ $totalRows_Registration = mysql_num_rows($Registration);
           <tr>
             <td><table border="0">
               <tr>
-                <td><label for="FirstName"><h6>First Name * :</h6><br></label>
+                <td><label for="FirstName"><h6>First Name <span class="required">*</span> :</h6><br></label>
                   
                     <input name="FirstName" type="text" required="required" class="styletxtfield" id="FirstName">
                   </td>
@@ -222,7 +222,7 @@ $totalRows_Registration = mysql_num_rows($Registration);
           </tr>
           <tr>
             <td>
-              <label for="Email"><h6>Email * :</h6><br></label>
+              <label for="Email"><h6>Email <span class="required">*</span> :</h6><br></label>
            
                 <input name="Email" type="email" required="required" class="styletxtfield" id="Email">
             </td>
@@ -234,12 +234,12 @@ $totalRows_Registration = mysql_num_rows($Registration);
             <td><table border="0">
               <tr>
                 <td>
-                  <label for="Password"><h6>Password * :</h6></label>
+                  <label for="Password"><h6>Password <span class="required">*</span> :</h6></label>
                    
                     <input name="Password" type="password" required="required" class="styletxtfield" id="Password">
                   </td>
                 <td>
-                  <label for="PasswordConfirm"><h6>Confirm Password * :</h6></label>
+                  <label for="PasswordConfirm"><h6>Confirm Password <span class="required">*</span> :</h6></label>
                  
                     <input name="PasswordConfirm" type="password" required="required" class="styletxtfield" id="PasswordConfirm">
                   </td>
@@ -250,7 +250,7 @@ $totalRows_Registration = mysql_num_rows($Registration);
             <td>&nbsp;</td>
           </tr>
           <tr>
-            <td><label for="Language"><h6>Language * :</h6>
+            <td><label for="Language"><h6>Language <span class="required">*</span> :</h6>
               <br>
             </label>
             <input name="Language" type="text" required="required" class="styletxtfield" id="Language"></td>
@@ -259,7 +259,7 @@ $totalRows_Registration = mysql_num_rows($Registration);
             <td>&nbsp;</td>
           </tr>
           <tr>
-            <td><label for="Url"><h6>URL * :</h6>
+            <td><label for="Url"><h6>URL <span class="required">*</span> :</h6>
               <br>
             </label>
             <input name="Url" type="text" required="required" class="styletxtfield" id="Url"></td>
@@ -268,7 +268,7 @@ $totalRows_Registration = mysql_num_rows($Registration);
             <td>&nbsp;</td>
           </tr>
           <tr>
-            <td><label for="Title"><h6>Title * :</h6>
+            <td><label for="Title"><h6>Title <span class="required">*</span> :</h6>
               <br>
             </label>
             <input name="Title" type="text" required="required" class="styletxtfield" id="Title"></td>
@@ -277,7 +277,7 @@ $totalRows_Registration = mysql_num_rows($Registration);
             <td>&nbsp;</td>
           </tr>
           <tr>
-            <td><label for="Description"><h6>Description * :</h6>
+            <td><label for="Description"><h6>Description <span class="required">*</span> :</h6>
               <br>
             </label>
             <textarea name="Description" required class="styletxtarea" id="Description"></textarea></td>
@@ -287,7 +287,7 @@ $totalRows_Registration = mysql_num_rows($Registration);
           </tr>
           <tr>
             <td>
-              <label for="PreviewPicture"><h6>Preview Picture * :</h6><br></label>
+              <label for="PreviewPicture"><h6>Preview Picture <span class="required">*</span> :</h6><br></label>
                           
               <input name="PreviewPicture" type="file" required="required" id="PreviewPicture" title="PreviewPicture">
             </td>

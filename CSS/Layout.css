@@ -53,6 +53,10 @@ body {
 	color:#000000;
 }
 
+.required {
+	color: #F8080C;
+}
+
 #PageHeading {
 	height: auto;
 	padding: 11px;
@@ -141,5 +145,3 @@ h6 {
 	-o-transition:all .2s ease-in-out;
 	transition:all .2s ease-in-out;
 }
-
-
