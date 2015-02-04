@@ -170,8 +170,6 @@ $totalRows_ManageUsers = mysql_num_rows($ManageUsers);
               <td width="140" height="140" rowspan="3">
 			  <a class="fancybox"  href="<?php echo $row_User['preview_thumb']; ?>">
 			  <img src="<?php echo $row_User['preview_thumb']; ?>" alt="" height="140px" width="140px" class="img-thumbnail">
-              
-              
               </td>
             </tr>
             <tr>
