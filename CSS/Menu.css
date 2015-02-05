@@ -37,27 +37,9 @@ nav ul li:hover a{
 	text-decoration:none;
 }
 
-@media screen and (max-width: 768px)
-{
-	#NavBar {
-		height: 40px;
-		background-color: rgb(13, 13, 13);
-	}
-	
-	nav ul li {
-		list-style-type:none;
-		float:left;
-		display:list-item;
-		width:100px;
-		height:40px;
-		text-align:center;
-		line-height:40px;
-		font-family:Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
-		font-size:13px;
-	}
-}
 
-@media screen and (max-width: 768px)
+
+@media screen and (max-width: 800px)
 {
 	#NavBar {
 		height: 160px;
