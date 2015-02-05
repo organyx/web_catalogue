@@ -88,10 +88,6 @@ $queryString_ManageUsers = sprintf("&totalRows_ManageUsers=%d%s", $totalRows_Man
 <link href="CSS/Menu.css" rel="stylesheet" type="text/css">
 <script src="Javascript/jquery-2.1.3.min.js" type="text/javascript"></script>
 
-
-
-
-
 <!-- Add fancyBox -->
 <link rel="stylesheet" href="fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
 <script type="text/javascript" src="fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
