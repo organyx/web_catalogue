@@ -204,99 +204,115 @@ $totalRows_Registration = mysql_num_rows($Registration);
     	</div>
     <div id="contentRight">
       <form action="<?php echo $editFormAction; ?>" method="POST" enctype="multipart/form-data" name="RegisterForm" id="RegisterForm">
-        <table width="400" border="0" align="center">
+        <table align="center" class="TableStyleBig">
           <tr>
-            <td><table border="0">
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td><table class="TableStyleRegUp"  align="center">
               <tr>
-                <td><label for="FirstName"><h6>First Name <span class="required">*</span> :</h6><br></label>
-                  
-                    <input name="FirstName" type="text" required="required" class="styletxtfield" id="FirstName">
-                  </td>
-                <td><label for="LastName"><h6>Last Name:</h6><br></label>
-                  <input name="LastName" type="text" class="styletxtfield" id="LastName"></td>
+                <td><table border="0">
+                  <tr class="updateLayout">
+                    <td><label for="FirstName">
+                      <h6>First Name <span class="required">*</span> :</h6>
+                      <br>
+                      </label>
+                      <input name="FirstName" type="text" required="required" class="styletxtfield" id="FirstName"></td>
+                    <td><label for="LastName">
+                      <h6>Last Name:</h6>
+                      <br>
+                      </label>
+                      <input name="LastName" type="text" class="styletxtfield" id="LastName"></td>
+                  </tr>
+                </table></td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <td><label for="Email">
+                  <h6>Email <span class="required">*</span> :</h6>
+                  <br>
+                  </label>
+                  <input name="Email" type="email" required="required" class="styletxtfield" id="Email"></td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <td><table border="0">
+                  <tr class="updateLayout">
+                    <td><label for="Password">
+                      <h6>Password <span class="required">*</span> :</h6>
+                      </label>
+                      <input name="Password" type="password" required="required" class="styletxtfield" id="Password"></td>
+                    <td><label for="PasswordConfirm">
+                      <h6>Confirm Password <span class="required">*</span> :</h6>
+                      </label>
+                      <input name="PasswordConfirm" type="password" required="required" class="styletxtfield" id="PasswordConfirm"></td>
+                  </tr>
+                </table></td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <td><label for="Language">
+                  <h6>Language <span class="required">*</span> :</h6>
+                  <br>
+                  </label>
+                  <input name="Language" type="text" required="required" class="styletxtfield" id="Language"></td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <td><label for="Url">
+                  <h6>URL <span class="required">*</span> :</h6>
+                  <br>
+                  </label>
+                  <input name="Url" type="text" required="required" class="styletxtfield" id="Url"></td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <td><label for="Title">
+                  <h6>Title <span class="required">*</span> :</h6>
+                  <br>
+                  </label>
+                  <input name="Title" type="text" required="required" class="styletxtfield" id="Title"></td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <td><label for="Description">
+                  <h6>Description <span class="required">*</span> :</h6>
+                  <br>
+                  </label>
+                  <textarea name="Description" required class="styletxtarea" id="Description"></textarea></td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <td><label for="PreviewPicture">
+                  <h6>Preview Picture <span class="required">*</span> :</h6>
+                  <br>
+                  </label>
+                  <input name="PreviewPicture" type="file" required="required" id="PreviewPicture" title="PreviewPicture"></td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <td><input type="submit" name="RegisterButton" id="RegisterButton" value="Register"></td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
               </tr>
             </table></td>
-          </tr>
-          <tr>
-            <td>&nbsp;</td>
-          </tr>
-          <tr>
-            <td>
-              <label for="Email"><h6>Email <span class="required">*</span> :</h6><br></label>
-           
-                <input name="Email" type="email" required="required" class="styletxtfield" id="Email">
-            </td>
-          </tr>
-          <tr>
-            <td>&nbsp;</td>
-          </tr>
-          <tr>
-            <td><table border="0">
-              <tr>
-                <td>
-                  <label for="Password"><h6>Password <span class="required">*</span> :</h6></label>
-                   
-                    <input name="Password" type="password" required="required" class="styletxtfield" id="Password">
-                  </td>
-                <td>
-                  <label for="PasswordConfirm"><h6>Confirm Password <span class="required">*</span> :</h6></label>
-                 
-                    <input name="PasswordConfirm" type="password" required="required" class="styletxtfield" id="PasswordConfirm">
-                  </td>
-              </tr>
-            </table></td>
-          </tr>
-          <tr>
-            <td>&nbsp;</td>
-          </tr>
-          <tr>
-            <td><label for="Language"><h6>Language <span class="required">*</span> :</h6>
-              <br>
-            </label>
-            <input name="Language" type="text" required="required" class="styletxtfield" id="Language"></td>
-          </tr>
-          <tr>
-            <td>&nbsp;</td>
-          </tr>
-          <tr>
-            <td><label for="Url"><h6>URL <span class="required">*</span> :</h6>
-              <br>
-            </label>
-            <input name="Url" type="text" required="required" class="styletxtfield" id="Url"></td>
-          </tr>
-          <tr>
-            <td>&nbsp;</td>
-          </tr>
-          <tr>
-            <td><label for="Title"><h6>Title <span class="required">*</span> :</h6>
-              <br>
-            </label>
-            <input name="Title" type="text" required="required" class="styletxtfield" id="Title"></td>
-          </tr>
-          <tr>
-            <td>&nbsp;</td>
-          </tr>
-          <tr>
-            <td><label for="Description"><h6>Description <span class="required">*</span> :</h6>
-              <br>
-            </label>
-            <textarea name="Description" required class="styletxtarea" id="Description"></textarea></td>
-          </tr>
-          <tr>
-            <td>&nbsp;</td>
-          </tr>
-          <tr>
-            <td>
-              <label for="PreviewPicture"><h6>Preview Picture <span class="required">*</span> :</h6><br></label>
-                          
-              <input name="PreviewPicture" type="file" required="required" id="PreviewPicture" title="PreviewPicture">
-            </td>
-          </tr>
-          <tr>
-            <td>&nbsp;</td>
-          </tr>
-          <tr>
-            <td><input type="submit" name="RegisterButton" id="RegisterButton" value="Register"></td>
           </tr>
           <tr>
             <td>&nbsp;</td>
