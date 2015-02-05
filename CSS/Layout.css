@@ -122,22 +122,24 @@ h6 {
 	width:670px;
 }
 
+.TableStyleAccount {
+	width:500px;
+}
+
+.TableStyleUpdate {
+	width:400px;
+}
+
 .TableStyleIndex {
-	border:hidden;
-	border-spacing: 0px;
-	border-collapse: collapse;
-	box-sizing: border-box;
-	background-color: transparent;
 	width:630px;
 }
 
-.TableStyleAdmin {
+.TableStyle {
 	border:hidden;
 	border-spacing: 0px;
 	border-collapse: collapse;
 	box-sizing: border-box;
 	background-color: transparent;
-	 width:500px;
 }
 
 .img-thumbnail {
@@ -186,18 +188,18 @@ h6 {
 		width:auto;
 	}
 	
+	.TableStyleUpdate {
+		width:auto;
+	}
+	
 	.TableStyleIndex {
 		width:auto;
 	}
-
-	.TableStyleAdmin {
-		 width:auto;
-	}
 	
+	.TableStyleAccount {
+		width:auto;
 }
-
-@media screen and (max-width: 670px){
-		
+	
 }
 
 @media screen and (max-width:478px){
@@ -224,12 +226,8 @@ h6 {
 		height: 50px;
 	}
 	
-	.TableStyleIndex {
-		width:auto;
-	}
-
-	.TableStyleAdmin {
-		 width:auto;
+	.updateLayout td{
+		display:block;
 	}
 }
 

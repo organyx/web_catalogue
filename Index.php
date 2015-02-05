@@ -131,7 +131,7 @@ $queryString_ManageUsers = sprintf("&totalRows_ManageUsers=%d%s", $totalRows_Man
     	<div id="contentLeft">
     	  <h2><a href="Account.php">Account</a></h2>
 			<br>
-    	  <h6>links</h6>
+    	  <h6>&nbsp;</h6>
     	</div>
     <div id="contentRight">
       <table class="TableStyleBig"  align="center">
@@ -141,7 +141,7 @@ $queryString_ManageUsers = sprintf("&totalRows_ManageUsers=%d%s", $totalRows_Man
         <tr>
           <td align="center" valign="top"><?php if ($totalRows_ManageUsers > 0) { // Show if recordset not empty ?>
             <?php do { ?>
-                <table border="1" class="TableStyleIndex">
+                <table border="1" class="TableStyleIndex TableStyle">
                 
                   <tr>
                     <td width="400" height="33" align="center"><?php echo $row_ManageUsers['title']; ?></td>
@@ -152,7 +152,7 @@ $queryString_ManageUsers = sprintf("&totalRows_ManageUsers=%d%s", $totalRows_Man
                   </tr>
                   <tr>
                     <td width="400" height="33">
-                    <table border="0">
+                    <table>
                       <tr>
                         <td width="210" height="30" align="center"><a href="<?php echo $row_ManageUsers['url']; ?>"><?php echo $row_ManageUsers['url']; ?></a></td>
                         <td width="210" height="30" align="center">Language: <?php echo $row_ManageUsers['language']; ?></td>

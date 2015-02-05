@@ -200,7 +200,7 @@ $queryString_ManageUsers = sprintf("&totalRows_ManageUsers=%d%s", $totalRows_Man
         <tr>
           <td align="center" valign="top"><?php if ($totalRows_ManageUsers > 0) { // Show if recordset not empty ?>
             <?php do { ?>
-                <table border="1" class="TableStyleAdmin">
+                <table border="1" class="TableStyleAccount TableStyle">
                   <tr>
                     <td>Registration Date: <?php echo $row_ManageUsers['registration']; ?></td>
                   </tr>

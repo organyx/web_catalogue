@@ -159,7 +159,7 @@ $totalRows_ManageUsers = mysql_num_rows($ManageUsers);
     	  <h1>Welcome,  <?php echo $row_User['first_name']; ?> <?php echo $row_User['last_name']; ?>!</h1>
       </div>
     	<div id="contentLeft">
-    	  <h2>Your Message</h2><br>
+    	  <h2>Update Your Account</h2><br>
           <h2><a href="Account.php">My Account</a></h2><br>
     	  <h2><a href="Update.php">Update Account</a></h2><br>
     	  <h2><a href="LogOut.php">Log Out</a></h2><br>
@@ -167,18 +167,18 @@ $totalRows_ManageUsers = mysql_num_rows($ManageUsers);
     	  <h6>&nbsp;</h6>
     	</div>
     <div id="contentRight">
-      <table class="TableStyleBig" border="0" align="center">
+      <table class="TableStyleBig" align="center">
         <tr>
           <td align="center">Account: <?php echo $row_User['email']; ?></td>
         </tr>
         <tr>
-          <td><form action="<?php echo $editFormAction; ?>" id="UpdateForm" name="UpdateForm" method="POST"><table width="400" border="0" align="center">
+          <td><form action="<?php echo $editFormAction; ?>" id="UpdateForm" name="UpdateForm" method="POST"><table class="TableStyleUpdate" align="center">
             <tr>
               <td>&nbsp;</td>
             </tr>
             <tr>
-              <td><table border="0">
-                <tr>
+              <td><table>
+                <tr class="updateLayout">
                   <td><label for="Password">Password:</label><br><br>
                     <input name="Password" type="password" class="styletxtfield" id="Password" value="<?php $dec_pass = base64_decode($row_User['password']); echo aes_decrypt($dec_pass);  ?>"></td>
                   <td><label for="PasswordConfirm">Confirm Password:</label><br><br>

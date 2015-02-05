@@ -123,6 +123,7 @@ $totalRows_ManageUsers = mysql_num_rows($ManageUsers);
 </script>
 
 <meta charset="utf-8">
+
 <title>My Account</title>
 </head>
 
@@ -146,6 +147,7 @@ $totalRows_ManageUsers = mysql_num_rows($ManageUsers);
       </div>
     	<div id="contentLeft">
     	  <h2>Account info</h2><br>
+          <h2><a href="Account.php">My Account</a></h2><br>
     	  <h2><a href="Update.php">Update Account</a></h2><br>
     	  <h2><a href="LogOut.php">Log Out</a></h2><br>
     	  <br>
@@ -156,7 +158,7 @@ $totalRows_ManageUsers = mysql_num_rows($ManageUsers);
           <td align="center">Account: <?php echo $row_User['email']; ?></td>
         </tr>
         <tr>
-          <td><table width="500" align="center" border="1" class="TableStyle">
+          <td><table width="500" align="center" border="1" class="TableStyleAccount TableStyle">
             <tr>
               <td align="right" valign="top">&nbsp;</td>
               <td align="right" valign="top">Registration date : </td>
