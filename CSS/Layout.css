@@ -182,6 +182,10 @@ h6 {
 		height: 50px;
 	}
 	
+	.TableStyleBig {
+		width:auto;
+	}
+	
 	.TableStyleIndex {
 		width:auto;
 	}

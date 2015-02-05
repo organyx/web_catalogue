@@ -151,9 +151,9 @@ $totalRows_ManageUsers = mysql_num_rows($ManageUsers);
     	  <br>
     	</div>
     <div id="contentRight">
-      <table width="630" border="0" align="center">
+      <table class="TableStyleBig" align="center">
         <tr>
-          <td>Account: <?php echo $row_User['email']; ?></td>
+          <td align="center">Account: <?php echo $row_User['email']; ?></td>
         </tr>
         <tr>
           <td><table width="500" align="center" border="1" class="TableStyle">
