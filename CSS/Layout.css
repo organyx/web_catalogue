@@ -123,13 +123,22 @@ h6 {
 	padding-left:6px;
 }
 
-.TableStyle {
+.TableStyleIndex {
 	border:hidden;
 	border-spacing: 0px;
 	border-collapse: collapse;
 	box-sizing: border-box;
 	background-color: transparent;
-	
+	width:630px;
+}
+
+.TableStyleAdmin {
+	border:hidden;
+	border-spacing: 0px;
+	border-collapse: collapse;
+	box-sizing: border-box;
+	background-color: transparent;
+	 width:500px;
 }
 
 .img-thumbnail {

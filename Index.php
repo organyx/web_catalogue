@@ -145,7 +145,7 @@ $queryString_ManageUsers = sprintf("&totalRows_ManageUsers=%d%s", $totalRows_Man
         <tr>
           <td align="center" valign="top"><?php if ($totalRows_ManageUsers > 0) { // Show if recordset not empty ?>
             <?php do { ?>
-                <table width="630" border="1" class="TableStyle">
+                <table border="1" class="TableStyleIndex">
                 
                   <tr>
                     <td width="400" height="33" align="center"><?php echo $row_ManageUsers['title']; ?></td>
