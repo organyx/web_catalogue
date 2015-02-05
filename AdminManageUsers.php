@@ -193,7 +193,7 @@ $queryString_ManageUsers = sprintf("&totalRows_ManageUsers=%d%s", $totalRows_Man
           <h2><a href="AdminManageUsers.php">Manage Users</a></h2>
     	</div>
     <div id="contentRight">
-      <table width="670" border="0" align="center">
+      <table class="TableStyleBig" align="center">
         <tr>
           <td align="right" valign="top">Showing:&nbsp;<?php echo ($startRow_ManageUsers + 1) ?> to <?php echo min($startRow_ManageUsers + $maxRows_ManageUsers, $totalRows_ManageUsers) ?> of <?php echo $totalRows_ManageUsers ?></td>
         </tr>

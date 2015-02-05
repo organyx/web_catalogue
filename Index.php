@@ -134,7 +134,7 @@ $queryString_ManageUsers = sprintf("&totalRows_ManageUsers=%d%s", $totalRows_Man
     	  <h6>links</h6>
     	</div>
     <div id="contentRight">
-      <table width="670" border="0" align="center">
+      <table class="TableStyleBig"  align="center">
         <tr>
           <td align="right" valign="top">Showing:&nbsp;<?php echo ($startRow_ManageUsers + 1) ?> to <?php echo min($startRow_ManageUsers + $maxRows_ManageUsers, $totalRows_ManageUsers) ?> of <?php echo $totalRows_ManageUsers ?></td>
         </tr>
@@ -145,7 +145,7 @@ $queryString_ManageUsers = sprintf("&totalRows_ManageUsers=%d%s", $totalRows_Man
                 
                   <tr>
                     <td width="400" height="33" align="center"><?php echo $row_ManageUsers['title']; ?></td>
-                     <td width="180" height="50" rowspan="3">
+                     <td width="150" height="50" rowspan="3">
                      <a class="fancybox"  href="<?php echo $row_ManageUsers['preview_thumb']; ?>">
                      <img src="<?php echo $row_ManageUsers['preview_thumb']; ?>" alt="" height="140px" width="140px" class="img-thumbnail"/></a>
                      </td>

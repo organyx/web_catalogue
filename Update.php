@@ -167,9 +167,9 @@ $totalRows_ManageUsers = mysql_num_rows($ManageUsers);
     	  <h6>&nbsp;</h6>
     	</div>
     <div id="contentRight">
-      <table width="630" border="0" align="center">
+      <table class="TableStyleBig" border="0" align="center">
         <tr>
-          <td>Account: <?php echo $row_User['email']; ?></td>
+          <td align="center">Account: <?php echo $row_User['email']; ?></td>
         </tr>
         <tr>
           <td><form action="<?php echo $editFormAction; ?>" id="UpdateForm" name="UpdateForm" method="POST"><table width="400" border="0" align="center">
