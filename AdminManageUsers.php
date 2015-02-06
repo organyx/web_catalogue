@@ -193,14 +193,14 @@ $queryString_ManageUsers = sprintf("&totalRows_ManageUsers=%d%s", $totalRows_Man
           <h2><a href="AdminManageUsers.php">Manage Users</a></h2>
     	</div>
     <div id="contentRight">
-      <table class="TableStyleBig" align="center">
+      <table class="TableStyleBig center WidthAuto">
         <tr>
           <td align="right" valign="top">Showing:&nbsp;<?php echo ($startRow_ManageUsers + 1) ?> to <?php echo min($startRow_ManageUsers + $maxRows_ManageUsers, $totalRows_ManageUsers) ?> of <?php echo $totalRows_ManageUsers ?></td>
         </tr>
         <tr>
           <td align="center" valign="top"><?php if ($totalRows_ManageUsers > 0) { // Show if recordset not empty ?>
             <?php do { ?>
-                <table border="1" class="TableStyleAccount TableStyle">
+                <table class="TableStyleAccount TableStyle center WidthAuto">
                   <tr>
                     <td>Registration Date: <?php echo $row_ManageUsers['registration']; ?></td>
                   </tr>
@@ -211,7 +211,7 @@ $queryString_ManageUsers = sprintf("&totalRows_ManageUsers=%d%s", $totalRows_Man
                     <td>User: <?php echo $row_ManageUsers['first_name']; ?> <?php echo $row_ManageUsers['last_name']; ?> | Account: <?php echo $row_ManageUsers['email']; ?></td>
                   </tr>
                   <tr>
-                    <td><table border="0" align="center">
+                    <td><table class="center">
                       <tr>
                         <td><form id="DeleteUserForm" name="DeleteUserForm" method="POST">
                           <input name="DeleteUserHiddenField" type="hidden" id="DeleteUserHiddenField" value="<?php echo $row_ManageUsers['userID']; ?>">

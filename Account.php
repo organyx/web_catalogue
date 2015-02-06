@@ -153,12 +153,12 @@ $totalRows_ManageUsers = mysql_num_rows($ManageUsers);
     	  <br>
     	</div>
     <div id="contentRight">
-      <table class="TableStyleBig" align="center">
+      <table class="TableStyleBig center WidthAuto">
         <tr>
           <td align="center">Account: <?php echo $row_User['email']; ?></td>
         </tr>
         <tr>
-          <td><table width="500" align="center" border="1" class="TableStyleAccount TableStyle">
+          <td><table class="TableStyleAccount TableStyle center WidthAuto">
             <tr>
               <td align="right" valign="top">&nbsp;</td>
               <td align="right" valign="top">Registration date : </td>

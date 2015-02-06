@@ -167,12 +167,12 @@ $totalRows_ManageUsers = mysql_num_rows($ManageUsers);
     	  <h6>&nbsp;</h6>
     	</div>
     <div id="contentRight">
-      <table class="TableStyleBig" align="center">
+      <table class="TableStyleBig center WidthAuto">
         <tr>
           <td align="center">Account: <?php echo $row_User['email']; ?></td>
         </tr>
         <tr>
-          <td><form action="<?php echo $editFormAction; ?>" id="UpdateForm" name="UpdateForm" method="POST"><table class="TableStyleRegUp" align="center">
+          <td><form action="<?php echo $editFormAction; ?>" id="UpdateForm" name="UpdateForm" method="POST"><table class="TableStyleRegUp WidthAuto" align="center">
             <tr>
               <td>&nbsp;</td>
             </tr>

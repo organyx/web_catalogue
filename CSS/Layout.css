@@ -118,6 +118,11 @@ h6 {
 	padding-left:6px;
 }
 
+.center {
+	margin-left: auto;
+    margin-right: auto;
+}
+
 .TableStyleBig {
 	width:670px;
 }
@@ -140,6 +145,10 @@ h6 {
 	border-collapse: collapse;
 	box-sizing: border-box;
 	background-color: transparent;
+}
+
+.TableStyle td {
+    border: 1px solid #000;
 }
 
 .img-thumbnail {
@@ -183,22 +192,10 @@ h6 {
 		border-top: 1px solid #000000;
 		height: 50px;
 	}
-	
-	.TableStyleBig {
+		
+	.WidthAuto {
 		width:auto;
 	}
-	
-	.TableStyleRegUp {
-		width:auto;
-	}
-	
-	.TableStyleIndex {
-		width:auto;
-	}
-	
-	.TableStyleAccount {
-		width:auto;
-}
 	
 }
 

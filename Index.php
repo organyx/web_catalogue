@@ -82,8 +82,8 @@ if (!empty($_SERVER['QUERY_STRING'])) {
 $queryString_ManageUsers = sprintf("&totalRows_ManageUsers=%d%s", $totalRows_ManageUsers, $queryString_ManageUsers);
 ?>
 <!doctype html>
-<html><head>
-
+<html>
+<head>
 <link href="CSS/Layout.css" rel="stylesheet" type="text/css">
 <link href="CSS/Menu.css" rel="stylesheet" type="text/css">
 <script src="Javascript/jquery-2.1.3.min.js" type="text/javascript"></script>
@@ -96,16 +96,14 @@ $queryString_ManageUsers = sprintf("&totalRows_ManageUsers=%d%s", $totalRows_Man
 <link rel="stylesheet" href="Javascript/fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" type="text/css" media="screen" />
 <script type="text/javascript" src="Javascript/fancybox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
 <script type="text/javascript" src="Javascript/fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
-
 <link rel="stylesheet" href="Javascript/fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" type="text/css" media="screen" />
-<script type="text/javascript" src="Javascript/fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>	
+<script type="text/javascript" src="Javascript/fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
 <!-- Pop Up -->
 <script type="text/javascript">
 	$(document).ready(function() {
 		$(".fancybox").fancybox();
 	});
-</script>				
-
+</script>
 <meta charset="utf-8">
 <title>Main</title>
 </head>
@@ -114,71 +112,69 @@ $queryString_ManageUsers = sprintf("&totalRows_ManageUsers=%d%s", $totalRows_Man
 <div id="Holder">
   <div id="Header"></div>
   <div id="NavBar">
-    	<nav>
-        	<ul>
-            	<li><a href="Login.php">Login</a></li>
-                <li><a href="Register.php">Register</a></li>
-                <li><a href="Index.php">Main</a></li>
-                <li><a href="ForgotPassword.php">Forgot Password</a></li>
-                
-            </ul>
-        </nav>
+    <nav>
+      <ul>
+        <li><a href="Login.php">Login</a></li>
+        <li><a href="Register.php">Register</a></li>
+        <li><a href="Index.php">Main</a></li>
+        <li><a href="ForgotPassword.php">Forgot Password</a></li>
+      </ul>
+    </nav>
   </div>
   <div id="Content">
-    	<div id="PageHeading">
-    	  <h1>Main</h1>
-      </div>
-    	<div id="contentLeft">
-    	  <h2><a href="Account.php">Account</a></h2>
-			<br>
-    	  <h6>&nbsp;</h6>
-    	</div>
+    <div id="PageHeading">
+      <h1>Main</h1>
+    </div>
+    <div id="contentLeft">
+      <h2><a href="Account.php">Account</a></h2>
+      <br>
+      <h6>&nbsp;</h6>
+    </div>
     <div id="contentRight">
-      <table class="TableStyleBig"  align="center">
+      <table class="TableStyleBig center WidthAuto">
         <tr>
           <td align="right" valign="top">Showing:&nbsp;<?php echo ($startRow_ManageUsers + 1) ?> to <?php echo min($startRow_ManageUsers + $maxRows_ManageUsers, $totalRows_ManageUsers) ?> of <?php echo $totalRows_ManageUsers ?></td>
         </tr>
         <tr>
           <td align="center" valign="top"><?php if ($totalRows_ManageUsers > 0) { // Show if recordset not empty ?>
-            <?php do { ?>
-                <table border="1" class="TableStyleIndex TableStyle">
-                
+              <?php do { ?>
+                <table class="TableStyleIndex TableStyle center WidthAuto">
                   <tr>
                     <td width="400" height="33" align="center"><?php echo $row_ManageUsers['title']; ?></td>
-                     <td width="150" height="50" rowspan="3">
-                     <a class="fancybox"  href="<?php echo $row_ManageUsers['preview_thumb']; ?>">
-                     <img src="<?php echo $row_ManageUsers['preview_thumb']; ?>" alt="" height="140px" width="140px" class="img-thumbnail"/></a>
-                     </td>
+                    <td width="150" height="50" rowspan="3"><a class="fancybox"  href="<?php echo $row_ManageUsers['preview_thumb']; ?>"> <img src="<?php echo $row_ManageUsers['preview_thumb']; ?>" alt="" height="140px" width="140px" class="img-thumbnail"/></a></td>
                   </tr>
                   <tr>
-                    <td width="400" height="33">
-                    <table>
-                      <tr>
-                        <td width="210" height="30" align="center"><a target="_blank" href="<?php echo $row_ManageUsers['url']; ?>"><?php echo $row_ManageUsers['url']; ?></a></td>
-                        <td width="210" height="30" align="center">Language: <?php echo $row_ManageUsers['language']; ?></td>
-                      </tr>
-                    </table><a href="<?php echo $row_ManageUsers['url']; ?>"></a></td>
+                    <td width="400" height="33"><table>
+                        <tr>
+                          <td width="210" height="30" align="center"><a target="_blank" href="<?php echo $row_ManageUsers['url']; ?>"><?php echo $row_ManageUsers['url']; ?></a></td>
+                          <td width="210" height="30" align="center">Language: <?php echo $row_ManageUsers['language']; ?></td>
+                        </tr>
+                      </table>
+                      <a href="<?php echo $row_ManageUsers['url']; ?>"></a></td>
                   </tr>
                   <tr>
                     <td width="400" height="64" valign="top"><?php echo $row_ManageUsers['description']; ?></td>
                   </tr>
-                </table><br>
+                </table>
+                <br>
                 <?php } while ($row_ManageUsers = mysql_fetch_assoc($ManageUsers)); ?>
-          <?php } // Show if recordset not empty ?></td>
+              <?php } // Show if recordset not empty ?></td>
         </tr>
         <tr>
           <td align="right" valign="top"><?php if ($pageNum_ManageUsers < $totalPages_ManageUsers) { // Show if not last page ?>
               <a href="<?php printf("%s?pageNum_ManageUsers=%d%s", $currentPage, min($totalPages_ManageUsers, $pageNum_ManageUsers + 1), $queryString_ManageUsers); ?>">Next</a>
               <?php } // Show if not last page ?>
-|
-<?php if ($pageNum_ManageUsers > 0) { // Show if not first page ?>
-  <a href="<?php printf("%s?pageNum_ManageUsers=%d%s", $currentPage, max(0, $pageNum_ManageUsers - 1), $queryString_ManageUsers); ?>">Previous</a>
-  <?php } // Show if not first page ?>          </td>
+            |
+            <?php if ($pageNum_ManageUsers > 0) { // Show if not first page ?>
+              <a href="<?php printf("%s?pageNum_ManageUsers=%d%s", $currentPage, max(0, $pageNum_ManageUsers - 1), $queryString_ManageUsers); ?>">Previous</a>
+              <?php } // Show if not first page ?></td>
         </tr>
       </table>
     </div>
   </div>
-  <div id="Footer"><p><a href="Admin.php">Admin</a></p></div>
+  <div id="Footer">
+    <p><a href="Admin.php">Admin</a></p>
+  </div>
 </div>
 </body>
 </html>

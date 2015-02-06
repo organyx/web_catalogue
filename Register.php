@@ -204,14 +204,14 @@ $totalRows_Registration = mysql_num_rows($Registration);
     	</div>
     <div id="contentRight">
       <form action="<?php echo $editFormAction; ?>" method="POST" enctype="multipart/form-data" name="RegisterForm" id="RegisterForm">
-        <table class="TableStyleBig" align="center">
+        <table class="TableStyleBig center WidthAuto">
           <tr>
             <td>&nbsp;</td>
           </tr>
           <tr>
-            <td><table class="TableStyleRegUp"  align="center">
+            <td><table class="TableStyleRegUp center WidthAuto">
               <tr>
-                <td><table border="0">
+                <td><table >
                   <tr class="updateLayout">
                     <td><label for="FirstName">
                       <h6>First Name <span class="required">*</span> :</h6>

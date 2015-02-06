@@ -118,7 +118,7 @@ if (isset($_POST['UserName'])) {
     	</div>
     <div id="contentRight">
       <form ACTION="<?php echo $loginFormAction; ?>" id="LoginForm" name="LoginForm" method="POST">
-        <table width="400" border="0" align="center">
+        <table class="TableStyleRegUp center WidthAuto">
           <tr>
             <td>&nbsp;</td>
           </tr>
