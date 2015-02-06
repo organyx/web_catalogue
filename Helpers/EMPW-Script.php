@@ -52,11 +52,11 @@ mysql_free_result($EmailPassword);
 
 if($totalRows_EmailPassword > 0)
 {
-	$dec_pass = aes_decrypt(base64_decode($_SESSION['EMPW']));
+	$dec_pass = $_SESSION['EMPW'];
 	$from = "noreply@domain.com";
 	$email = $dec_pass;
 	$subject = "Domain - Email Password";
-	$message = "Your password is: " .$row_EmailPassword['password'];
+	$message = "Your password is: " .aes_decrypt(base64_decode($row_EmailPassword['password']));
 	
 	mail($email, $subject,$message, "From: ".$from);
 }
