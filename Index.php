@@ -126,6 +126,7 @@ $queryString_ManageUsers = sprintf("&totalRows_ManageUsers=%d%s", $totalRows_Man
       <h1>Main</h1>
     </div>
     <div id="contentLeft">
+      <h2>Links</h2><br>
       <h2><a href="Account.php">Account</a></h2>
       <br>
       <h6>&nbsp;</h6>
@@ -140,8 +141,8 @@ $queryString_ManageUsers = sprintf("&totalRows_ManageUsers=%d%s", $totalRows_Man
               <?php do { ?>
                 <table class="TableStyleIndex TableStyle center WidthAuto">
                   <tr>
-                    <td width="400" height="33" align="center"><?php echo $row_ManageUsers['title']; ?></td>
-                    <td width="150" height="50" rowspan="3"><a class="fancybox"  href="<?php echo $row_ManageUsers['preview_thumb']; ?>"> <img src="<?php echo $row_ManageUsers['preview_thumb']; ?>" alt="" height="140px" width="140px" class="img-thumbnail"/></a></td>
+                    <td width="400" height="33" align="center" ><?php echo $row_ManageUsers['title']; ?></td>
+                    <td width="150" height="50" rowspan="3" class="TableStyleBorderLeft"><a class="fancybox"  href="<?php echo $row_ManageUsers['preview_thumb']; ?>"> <img src="<?php echo $row_ManageUsers['preview_thumb']; ?>" alt="" height="140px" width="140px" class="img-thumbnail"/></a></td>
                   </tr>
                   <tr>
                     <td width="400" height="33"><table>

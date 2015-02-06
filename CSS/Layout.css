@@ -147,8 +147,12 @@ h6 {
 	background-color: transparent;
 }
 
-.TableStyle td {
+.TableStyle tr {
     border: 1px solid #000;
+}
+
+.TableStyleBorderLeft{
+    border-left: 1px solid #000;
 }
 
 .img-thumbnail {
