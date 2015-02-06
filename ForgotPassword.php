@@ -32,7 +32,7 @@
     	  <h6>Type in your email <br>to recieve your password</h6>
     	</div>
     <div id="contentRight">
-      <form action="EMPW-Script.php" method="post" name="EMPWForm" id="EMPWForm"> 
+      <form action="Helpers/EMPW-Script.php" method="post" name="EMPWForm" id="EMPWForm"> 
       <table width="500" border="0" align="center">
         <tr>
           <td> <label for="EMPWEmail"><h6>Email:</h6><br></label>

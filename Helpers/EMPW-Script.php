@@ -1,8 +1,9 @@
 <?php 
 	@session_start();
 	$_SESSION['EMPW'] = $_POST['EMPWEmail'];
+	require_once('security.php');
  ?>
-<?php require_once('Connections/WebCatalogue.php'); ?>
+<?php require_once('../Connections/WebCatalogue.php'); ?>
 <?php
 if (!function_exists("GetSQLValueString")) {
 function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
@@ -40,7 +41,7 @@ if (isset($_SESSION['EMPW'])) {
   $colname_EmailPassword = $_SESSION['EMPW'];
 }
 mysql_select_db($database_WebCatalogue, $WebCatalogue);
-$query_EmailPassword = sprintf("SELECT * FROM `user` WHERE email = %s", GetSQLValueString($colname_EmailPassword, "text"));
+$query_EmailPassword = sprintf("SELECT * FROM `users` WHERE email = %s", GetSQLValueString($colname_EmailPassword, "text"));
 $EmailPassword = mysql_query($query_EmailPassword, $WebCatalogue) or die(mysql_error());
 $row_EmailPassword = mysql_fetch_assoc($EmailPassword);
 $totalRows_EmailPassword = mysql_num_rows($EmailPassword);
@@ -51,9 +52,9 @@ mysql_free_result($EmailPassword);
 
 if($totalRows_EmailPassword > 0)
 {
-	
+	$dec_pass = aes_decrypt(base64_decode($_SESSION['EMPW']));
 	$from = "noreply@domain.com";
-	$email = $_SESSION['EMPW'];
+	$email = $dec_pass;
 	$subject = "Domain - Email Password";
 	$message = "Your password is: " .$row_EmailPassword['password'];
 	

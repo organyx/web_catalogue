@@ -212,7 +212,7 @@ $totalRows_ManageUsers = mysql_num_rows($ManageUsers);
             </tr>
             <tr>
               <td><label for="Description">Description:</label><br><br>
-                <input name="Description" type="text" class="styletxtfield" id="Description" value="<?php echo $row_User['description']; ?>"></td>
+                <input name="Description" type="text" class="styletxtarea" id="Description" value="<?php echo $row_User['description']; ?>"></td>
             </tr>
             <tr>
               <td>&nbsp;</td>
