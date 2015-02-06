@@ -4,6 +4,7 @@
 
 	
 
+
 if (!function_exists("GetSQLValueString")) {
 function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
 {
@@ -77,7 +78,7 @@ if (isset($_POST[$MM_flag])) {
  	{
 	   $dir = mkdir($user_folder_path, 0777, true);
 	}
-
+	
  	$target_dir = "Assets/img/" . basename($_POST['Email']) . "/";
 	$target_file = $target_dir . basename($_FILES["PreviewPicture"]["name"]);
 	$uploadOk = 1;
@@ -301,7 +302,7 @@ $totalRows_Registration = mysql_num_rows($Registration);
                   <h6>Preview Picture <span class="required">*</span> :</h6>
                   <br>
                   </label>
-                  <input name="PreviewPicture" type="file" required="required" id="PreviewPicture" title="PreviewPicture"></td>
+                  <input name="PreviewPicture" type="file" id="PreviewPicture" title="PreviewPicture"></td>
               </tr>
               <tr>
                 <td>&nbsp;</td>
