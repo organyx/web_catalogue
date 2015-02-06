@@ -72,11 +72,16 @@ if (isset($_POST[$MM_flag])) {
   }
   
   $default_picture = "Assets/img/default.png/";
-  $user_folder_path = "Assets/img/" . $_POST['Email'] . "/";
+  $user_folder_path = "Assets/img/" . basename($_POST['Email']) . "/";
 
  	if (!file_exists($user_folder_path)) 
  	{
 	   $dir = mkdir($user_folder_path, 0777, true);
+	}
+	
+	if(($_FILES["PreviewPicture"]["size"] == 0))
+	{
+		copy("Assets/img/default.png", "Assets/img/" . basename($_POST['Email']) . "/default.png");
 	}
 	
  	$target_dir = "Assets/img/" . basename($_POST['Email']) . "/";
@@ -123,7 +128,14 @@ if (isset($_POST[$MM_flag])) {
 	    }
 	}
 
-	$user_printscreen_location = $target_file;
+	if(($_FILES["PreviewPicture"]["size"] == 0))
+	{
+		$user_printscreen_location = $user_folder_path . "default.png";
+	}
+	else
+	{
+		$user_printscreen_location = $target_file;
+	}
 	
 }
 
@@ -299,7 +311,7 @@ $totalRows_Registration = mysql_num_rows($Registration);
               </tr>
               <tr>
                 <td><label for="PreviewPicture">
-                  <h6>Preview Picture <span class="required">*</span> :</h6>
+                  <h6>Preview Picture :</h6>
                   <br>
                   </label>
                   <input name="PreviewPicture" type="file" id="PreviewPicture" title="PreviewPicture"></td>
