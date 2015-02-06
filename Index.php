@@ -154,7 +154,7 @@ $queryString_ManageUsers = sprintf("&totalRows_ManageUsers=%d%s", $totalRows_Man
                     <td width="400" height="33">
                     <table>
                       <tr>
-                        <td width="210" height="30" align="center"><a href="<?php echo $row_ManageUsers['url']; ?>"><?php echo $row_ManageUsers['url']; ?></a></td>
+                        <td width="210" height="30" align="center"><a target="_blank" href="<?php echo $row_ManageUsers['url']; ?>"><?php echo $row_ManageUsers['url']; ?></a></td>
                         <td width="210" height="30" align="center">Language: <?php echo $row_ManageUsers['language']; ?></td>
                       </tr>
                     </table><a href="<?php echo $row_ManageUsers['url']; ?>"></a></td>
