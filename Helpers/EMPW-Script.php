@@ -52,23 +52,21 @@ mysql_free_result($EmailPassword);
 
 if($totalRows_EmailPassword > 0)
 {
-	$dec_pass = $_SESSION['EMPW'];
+	$dec_pass = aes_decrypt(base64_decode($row_EmailPassword['password']));
 	$from = "noreply@domain.com";
-	$email = $dec_pass;
+	$email = $_SESSION['EMPW'];
 	$subject = "Domain - Email Password";
-	$message = "Your password is: " .aes_decrypt(base64_decode($row_EmailPassword['password']));
+	$message = "Your password is: " .$dec_pass;
 	
 	mail($email, $subject,$message, "From: ".$from);
 }
 if($totalRows_EmailPassword > 0)
 {
 	echo "Check your email.";
-	//header('Location: ../ForgotPassword.php');
 }
 else
 {
 	echo "Fail. Try again";
-	//header('Location: ../ForgotPassword.php');
 }
 
 
