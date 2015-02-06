@@ -6,7 +6,7 @@
 <link href="CSS/Menu.css" rel="stylesheet" type="text/css">
 
 <meta charset="utf-8">
-<title>Untitled Document</title>
+<title>Forgot Password</title>
 </head>
 
 <body>

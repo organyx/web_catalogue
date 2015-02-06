@@ -63,10 +63,12 @@ if($totalRows_EmailPassword > 0)
 if($totalRows_EmailPassword > 0)
 {
 	echo "Check your email.";
+	//header('Location: ../ForgotPassword.php');
 }
 else
 {
 	echo "Fail. Try again";
+	//header('Location: ../ForgotPassword.php');
 }
 
 
