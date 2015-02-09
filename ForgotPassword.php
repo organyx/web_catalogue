@@ -34,6 +34,7 @@
     <div id="contentRight">
       <form action="Helpers/EMPW-Script.php" method="post" name="EMPWForm" id="EMPWForm"> 
       <table class="center TableStyleAccount WidthAuto">
+      <tr><td>&nbsp;</td></tr>
         <tr>
           <td> <label for="EMPWEmail"><h6>Email:</h6><br></label>
         		<input name="EMPWEmail" type="text" class="styletxtfield" id="EMPWEmail"></td>
