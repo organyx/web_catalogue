@@ -41,6 +41,7 @@ body {
 	width: 680px;
 	float: right;
 	border-left: 1px solid #000000;
+	min-height:350px;
 }
 
 #contentRight a {
