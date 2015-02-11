@@ -86,7 +86,10 @@ $queryString_ManageUsers = sprintf("&totalRows_ManageUsers=%d%s", $totalRows_Man
 <head>
 <link href="CSS/Layout.css" rel="stylesheet" type="text/css">
 <link href="CSS/Menu.css" rel="stylesheet" type="text/css">
+<link href="font-awesome-4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
 <script src="Javascript/jquery-2.1.3.min.js" type="text/javascript"></script>
+
 
 <!-- Add fancyBox -->
 <link rel="stylesheet" href="Javascript/fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
@@ -175,6 +178,12 @@ $queryString_ManageUsers = sprintf("&totalRows_ManageUsers=%d%s", $totalRows_Man
   </div>
   <div id="Footer">
     <p><a href="Admin.php">Admin</a></p>
+    
+    <div class="social">
+    	<a href="#"><i class="fa fa-facebook fa-2x""></i></a>
+        <a href="#"><i class="fa fa-twitter fa-2x""></i></a>
+        <a href="#"><i class="fa fa-google-plus fa-2x""></i></a>
+    </div>
   </div>
 </div>
 </body>
