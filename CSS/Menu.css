@@ -2,6 +2,8 @@
 #NavBar {
 	height: 60px;
 	background-color: rgb(13, 13, 13);
+	color: #FFFFFF;
+	text-align: right;
 }
 
 nav ul {
@@ -34,6 +36,15 @@ nav ul li:hover {
 nav ul li:hover a{
 	display:block;
 	color:#000;
+	text-decoration:none;
+}
+
+nav label {
+	color:#FFF;
+}
+
+.link {
+	color:#FFF;
 	text-decoration:none;
 }
 

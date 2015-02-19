@@ -1,5 +1,6 @@
 <?php @session_start(); ?>
 <?php require_once('Connections/WebCatalogue.php'); ?>
+<?php require_once('Helpers/security.php'); ?>
 <?php
 if (!isset($_SESSION)) {
   session_start();
@@ -33,7 +34,7 @@ function isAuthorized($strUsers, $strGroups, $UserName, $UserGroup) {
   return $isValid; 
 }
 
-$MM_restrictGoTo = "Login.php";
+$MM_restrictGoTo = "Index.php";
 if (!((isset($_SESSION['MM_Username'])) && (isAuthorized("",$MM_authorizedUsers, $_SESSION['MM_Username'], $_SESSION['MM_UserGroup'])))) {   
   $MM_qsChar = "?";
   $MM_referrer = $_SERVER['PHP_SELF'];
@@ -104,12 +105,20 @@ $totalRows_User = mysql_num_rows($User);
   <div id="NavBar">
     	<nav>
         	<ul>
-            	<li><a href="Login.php">Login</a></li>
+              <li><a href="Index.php">Main</a></li>
                 <li><a href="Register.php">Register</a></li>
-                <li><a href="Index.php">Main</a></li>
-                <li><a href="ForgotPassword.php">Forgot Password</a></li>
-                
-            </ul>
+                <li><a href="ForgotPassword.php">Forgot Password</a></li>      
+          </ul>
+            
+             <?php if(isset($_SESSION['MM_Username'])) { ?>
+              <table width="300" align="right">
+                <tr>
+                  <td align="right"><label>User: <?php echo $_SESSION['MM_Username']; ?></label></td>
+                  <td align="right"><a class="link" href="LogOut.php">LogOut</a></td>
+                </tr>
+              </table>
+              
+              <?php }  ?>
         </nav>
   </div>
   <div id="Content">

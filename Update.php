@@ -146,12 +146,20 @@ $totalRows_ManageUsers = mysql_num_rows($ManageUsers);
   <div id="NavBar">
     	<nav>
         	<ul>
-            	<li><a href="Login.php">Login</a></li>
-                <li><a href="Register.php">Register</a></li>
                 <li><a href="Index.php">Main</a></li>
-           	  <li><a href="ForgotPassword.php">Forgot Password</a></li>
-                
-            </ul>
+                <li><a href="Register.php">Register</a></li>
+           		<li><a href="ForgotPassword.php">Forgot Password</a></li>
+           </ul>
+            
+             <?php if(isset($_SESSION['MM_Username'])) { ?>
+              <table width="300" align="right">
+                <tr>
+                  <td align="right"><label>User: <?php echo $_SESSION['MM_Username']; ?></label></td>
+                  <td align="right"><a class="link" href="LogOut.php">LogOut</a></td>
+                </tr>
+              </table>
+              
+              <?php }  ?>
         </nav>
   </div>
   <div id="Content">

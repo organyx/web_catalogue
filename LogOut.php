@@ -1,7 +1,7 @@
 <?php require_once('Connections/WebCatalogue.php'); ?>
 <?php
 // *** Logout the current user.
-$logoutGoTo = "Login.php";
+$logoutGoTo = "Index.php";
 if (!isset($_SESSION)) {
   session_start();
 }
@@ -72,7 +72,7 @@ $totalRows_LogOut = mysql_num_rows($LogOut);
   <div id="NavBar">
     	<nav>
         	<ul>
-            	<li><a href="Login.php">Login</a></li>
+            	<li><a href="Index.php">Main</a></li>
                 <li><a href="Register.php">Register</a></li>
                 <li><a href="ForgotPassword.php">Forgot Password</a></li>
                 

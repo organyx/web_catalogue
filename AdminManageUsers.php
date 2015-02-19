@@ -1,5 +1,6 @@
 <?php @session_start(); 
 	require_once('Helpers/deleteUser.php');				?>
+<?php require_once('Helpers/security.php'); ?>
 <?php require_once('Connections/WebCatalogue.php'); ?>
 <?php
 if (!isset($_SESSION)) {
@@ -109,6 +110,15 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "ApproveUserForm")) 
   $Result1 = mysql_query($updateSQL, $WebCatalogue) or die(mysql_error());
 }
 
+if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "MakeAdminForm")) {
+  $updateSQL = sprintf("UPDATE users SET Userlevel=%s WHERE userID=%s",
+                       GetSQLValueString($_POST['MakeUserAdminHiddenField'], "int"),
+                       GetSQLValueString($_POST['MakeUserAdminIDhiddenField'], "int"));
+
+  mysql_select_db($database_WebCatalogue, $WebCatalogue);
+  $Result1 = mysql_query($updateSQL, $WebCatalogue) or die(mysql_error());
+}
+
 $colname_User = "-1";
 if (isset($_SESSION['MM_Username'])) {
   $colname_User = $_SESSION['MM_Username'];
@@ -173,12 +183,19 @@ $queryString_ManageUsers = sprintf("&totalRows_ManageUsers=%d%s", $totalRows_Man
   <div id="NavBar">
     	<nav>
         	<ul>
-            	<li><a href="Login.php">Login</a></li>
+         		<li><a href="Index.php">Main</a></li>
                 <li><a href="Register.php">Register</a></li>
-                <li><a href="Index.php">Main</a></li>
                 <li><a href="ForgotPassword.php">Forgot Password</a></li>
-                
             </ul>
+              <?php if(isset($_SESSION['MM_Username'])) { ?>
+              <table width="300" align="right">
+                <tr>
+                  <td align="right"><label>User: <?php echo $_SESSION['MM_Username']; ?></label></td>
+                  <td align="right"><a class="link" href="LogOut.php">LogOut</a></td>
+                </tr>
+              </table>
+              
+              <?php }  ?>
         </nav>
   </div>
   <div id="Content">
@@ -211,6 +228,9 @@ $queryString_ManageUsers = sprintf("&totalRows_ManageUsers=%d%s", $totalRows_Man
                     <td>User: <?php echo $row_ManageUsers['first_name']; ?> <?php echo $row_ManageUsers['last_name']; ?> | Account: <?php echo $row_ManageUsers['email']; ?></td>
                   </tr>
                   <tr>
+                    <td>Status: <?php echo $row_ManageUsers['Userlevel']; ?></td>
+                  </tr>
+                  <tr>
                     <td><table class="center">
                       <tr>
                         <td><form id="DeleteUserForm" name="DeleteUserForm" method="POST">
@@ -223,10 +243,18 @@ $queryString_ManageUsers = sprintf("&totalRows_ManageUsers=%d%s", $totalRows_Man
                           <input type="submit" name="ApproveUserButton" id="ApproveUserButton" value="Approve User">
                           <input type="hidden" name="MM_update" value="ApproveUserForm">
                         </form></td>
+                        <td><form action="<?php echo $editFormAction; ?>" id="MakeAdminForm" name="MakeAdminForm" method="POST">
+                        <input name="MakeUserAdminHiddenField" type="hidden" id="ApproveUserHiddenField" value="<?php echo "2"; ?>">
+                          <input type="submit" name="MakeAdminButton" id="MakeAdminButton" value="Give Admin Rights">
+                          <input name="MakeUserAdminIDhiddenField" type="hidden" id="ApproveIDhiddenField" value="<?php echo $row_ManageUsers['userID']; ?>">
+                          <input type="hidden" name="MM_update" value="MakeAdminForm">
+                        </form></td>
                       </tr>
                     </table></td>
                   </tr>
-                </table><br>
+                  
+                </table>
+                <br>
                 <?php } while ($row_ManageUsers = mysql_fetch_assoc($ManageUsers)); ?>
           <?php } // Show if recordset not empty ?></td>
         </tr>
