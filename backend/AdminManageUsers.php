@@ -1,7 +1,7 @@
 <?php @session_start(); 
-	require_once('Helpers/deleteUser.php');				?>
-<?php require_once('Helpers/security.php'); ?>
-<?php require_once('Connections/WebCatalogue.php'); ?>
+	require_once('../Helpers/deleteUser.php');				?>
+<?php require_once('../Helpers/security.php'); ?>
+<?php require_once('../Connections/WebCatalogue.php'); ?>
 <?php
 if (!isset($_SESSION)) {
   session_start();
@@ -35,7 +35,7 @@ function isAuthorized($strUsers, $strGroups, $UserName, $UserGroup) {
   return $isValid; 
 }
 
-$MM_restrictGoTo = "Login.php";
+$MM_restrictGoTo = "../Login.php";
 if (!((isset($_SESSION['MM_Username'])) && (isAuthorized("",$MM_authorizedUsers, $_SESSION['MM_Username'], $_SESSION['MM_UserGroup'])))) {   
   $MM_qsChar = "?";
   $MM_referrer = $_SERVER['PHP_SELF'];
@@ -170,8 +170,8 @@ $queryString_ManageUsers = sprintf("&totalRows_ManageUsers=%d%s", $totalRows_Man
 <html>
 <head>
 
-<link href="CSS/Layout.css" rel="stylesheet" type="text/css">
-<link href="CSS/Menu.css" rel="stylesheet" type="text/css">
+<link href="../CSS/Layout.css" rel="stylesheet" type="text/css">
+<link href="../CSS/Menu.css" rel="stylesheet" type="text/css">
 
 <meta charset="utf-8">
 <title>Admin Control Panel</title>
@@ -183,15 +183,19 @@ $queryString_ManageUsers = sprintf("&totalRows_ManageUsers=%d%s", $totalRows_Man
   <div id="NavBar">
     	<nav>
         	<ul>
-         		<li><a href="Index.php">Main</a></li>
-                <li><a href="Register.php">Register</a></li>
-                <li><a href="ForgotPassword.php">Forgot Password</a></li>
+         		<li><a href="../Index.php">Main</a></li>
+                <li><a href="../Register.php">Register</a></li>
+                <li><a href="../ForgotPassword.php">Forgot Password</a></li>
             </ul>
               <?php if(isset($_SESSION['MM_Username'])) { ?>
               <table width="300" align="right">
                 <tr>
                   <td align="right"><label>User: <?php echo $_SESSION['MM_Username']; ?></label></td>
-                  <td align="right"><a class="link" href="LogOut.php">LogOut</a></td>
+                  <td align="right"><a class="link" href="../LogOut.php">LogOut</a></td>
+                </tr>
+                <tr>
+               		<td></td>
+                	<td align="right"><a class="link" href="../Account.php">My Account</a></td>
                 </tr>
               </table>
               
@@ -206,8 +210,8 @@ $queryString_ManageUsers = sprintf("&totalRows_ManageUsers=%d%s", $totalRows_Man
     	  <h2>Admin links</h2>
     	  <p><?php echo $row_User['email']; ?></p>
     	  <br>
-    	  <h2><a href="Account.php">My Account</a></h2><br>
-          <h2><a href="AdminManageUsers.php">Manage Users</a></h2>
+    	  <h2><a href="../Account.php">My Account</a></h2><br>
+          <h2><a href="../LogOut.php">Log Out</a></h2>
     	</div>
     <div id="contentRight">
       <table class="TableStyleBig center WidthAuto">
@@ -228,7 +232,7 @@ $queryString_ManageUsers = sprintf("&totalRows_ManageUsers=%d%s", $totalRows_Man
                     <td>User: <?php echo $row_ManageUsers['first_name']; ?> <?php echo $row_ManageUsers['last_name']; ?> | Account: <?php echo $row_ManageUsers['email']; ?></td>
                   </tr>
                   <tr>
-                    <td>Status: <?php echo $row_ManageUsers['Userlevel']; ?></td>
+                  	<td>Status: <?php echo ($row_ManageUsers['Userlevel'] == 1 ? "User" : "Admin"); ?></td>     
                   </tr>
                   <tr>
                     <td><table class="center">
@@ -270,7 +274,11 @@ $queryString_ManageUsers = sprintf("&totalRows_ManageUsers=%d%s", $totalRows_Man
       </table>
     </div>
   </div>
-  <div id="Footer"><p><a href="Admin.php">Admin</a></p></div>
+  <div id="Footer">
+
+    	<p><a href="Admin.php">Admin</a></p>
+
+  </div>
 </div>
 </body>
 </html>

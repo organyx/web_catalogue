@@ -151,7 +151,7 @@ if (isset($_POST['UserName'])) {
       </form>
     </div>
   </div>
-  <div id="Footer"><p><a href="Admin.php" >Admin</a></p></div>
+  <div id="Footer"><p><a href="backend/Admin.php" >Admin</a></p></div>
 </div>
 </body>
 </html>

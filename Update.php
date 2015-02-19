@@ -157,6 +157,10 @@ $totalRows_ManageUsers = mysql_num_rows($ManageUsers);
                   <td align="right"><label>User: <?php echo $_SESSION['MM_Username']; ?></label></td>
                   <td align="right"><a class="link" href="LogOut.php">LogOut</a></td>
                 </tr>
+                <tr>
+               		<td></td>
+                	<td align="right"><a class="link" href="Account.php">My Account</a></td>
+                </tr>
               </table>
               
               <?php }  ?>
@@ -169,7 +173,6 @@ $totalRows_ManageUsers = mysql_num_rows($ManageUsers);
     	<div id="contentLeft">
     	  <h2>Update Your Account</h2><br>
           <h2><a href="Account.php">My Account</a></h2><br>
-    	  <h2><a href="Update.php">Update Account</a></h2><br>
     	  <h2><a href="LogOut.php">Log Out</a></h2><br>
     	  <br>
     	  <h6>&nbsp;</h6>
@@ -243,7 +246,9 @@ $totalRows_ManageUsers = mysql_num_rows($ManageUsers);
       </table>
     </div>
   </div>
-  <div id="Footer"><p><a href="Admin.php">Admin</a></p></div>
+  <div id="Footer">
+
+  </div>
 </div>
 </body>
 </html>

@@ -188,6 +188,10 @@ $enc_pass = aes_encrypt($_POST['Password']);
           <td align="right"><label>User: <?php echo $_SESSION['MM_Username']; ?></label></td>
           <td align="right"><a class="link" href="LogOut.php">LogOut</a></td>
         </tr>
+        <tr>
+          <td></td>
+          <td align="right"><a class="link" href="Account.php">My Account</a></td>
+        </tr>
       </table>
       
       <?php }  ?>
@@ -246,7 +250,6 @@ $enc_pass = aes_encrypt($_POST['Password']);
     </div>
   </div>
   <div id="Footer">
-    <p><a href="Admin.php">Admin</a></p>
     
     <div class="social">
     	<a href="#"><i class="fa fa-facebook fa-2x""></i></a>
