@@ -112,10 +112,6 @@ $totalRows_User = mysql_num_rows($User);
     	  <h6>links</h6>
     	</div>
     <div id="contentRight"></div>
-  </div>
-  <div id="Footer">
+  
 
-    	<p><a href="admin.php">Admin</a></p>
-
-  </div>
 <?php include('../Bottom.php'); ?>

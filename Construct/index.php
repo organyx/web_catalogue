@@ -145,11 +145,11 @@ $enc_pass = aes_encrypt($_POST['Password']);
       <table width="300" align="right">
         <tr>
           <td align="right"><label>User: <?php echo $_SESSION['MM_Username']; ?></label></td>
-          <td align="right"><a class="link" href="LogOut.php">LogOut</a></td>
+          <td align="right"><a class="link" href="logout.php">LogOut</a></td>
         </tr>
         <tr>
           <td></td>
-          <td align="right"><a class="link" href="Account.php">My Account</a></td>
+          <td align="right"><a class="link" href="acc.php">My Account</a></td>
         </tr>
       </table>
       
@@ -159,7 +159,7 @@ $enc_pass = aes_encrypt($_POST['Password']);
     </div>
     <div id="contentLeft">
       <h2>Links</h2><br>
-      <h2><a href="Account.php">Account</a></h2>
+      <h2><a href="acc.php">Account</a></h2>
       <br>
       <h6>&nbsp;</h6>
     </div>

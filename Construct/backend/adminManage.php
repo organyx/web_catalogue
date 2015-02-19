@@ -34,7 +34,7 @@ function isAuthorized($strUsers, $strGroups, $UserName, $UserGroup) {
   return $isValid; 
 }
 
-$MM_restrictGoTo = "../Login.php";
+$MM_restrictGoTo = "../index.php";
 if (!((isset($_SESSION['MM_Username'])) && (isAuthorized("",$MM_authorizedUsers, $_SESSION['MM_Username'], $_SESSION['MM_UserGroup'])))) {   
   $MM_qsChar = "?";
   $MM_referrer = $_SERVER['PHP_SELF'];
@@ -92,7 +92,7 @@ if ((isset($_POST['DeleteUserHiddenField'])) && ($_POST['DeleteUserHiddenField']
   mysql_select_db($database_WebCatalogue, $WebCatalogue);
   $Result1 = mysql_query($deleteSQL, $WebCatalogue) or die(mysql_error());
 
-  $deleteGoTo = "AdminManageUsers.php";
+  $deleteGoTo = "adminManage.php";
   if (isset($_SERVER['QUERY_STRING'])) {
     $deleteGoTo .= (strpos($deleteGoTo, '?')) ? "&" : "?";
     $deleteGoTo .= $_SERVER['QUERY_STRING'];
@@ -169,11 +169,11 @@ $queryString_ManageUsers = sprintf("&totalRows_ManageUsers=%d%s", $totalRows_Man
               <table width="300" align="right">
                 <tr>
                   <td align="right"><label>User: <?php echo $_SESSION['MM_Username']; ?></label></td>
-                  <td align="right"><a class="link" href="../LogOut.php">LogOut</a></td>
+                  <td align="right"><a class="link" href="../logout.php">LogOut</a></td>
                 </tr>
                 <tr>
                		<td></td>
-                	<td align="right"><a class="link" href="../Account.php">My Account</a></td>
+                	<td align="right"><a class="link" href="../acc.php">My Account</a></td>
                 </tr>
               </table>
               
@@ -185,8 +185,8 @@ $queryString_ManageUsers = sprintf("&totalRows_ManageUsers=%d%s", $totalRows_Man
     	  <h2>Admin links</h2>
     	  <p><?php echo $row_User['email']; ?></p>
     	  <br>
-    	  <h2><a href="../Account.php">My Account</a></h2><br>
-          <h2><a href="../LogOut.php">Log Out</a></h2>
+    	  <h2><a href="../acc.php">My Account</a></h2><br>
+          <h2><a href="../logout.php">Log Out</a></h2>
     	</div>
     <div id="contentRight">
       <table class="TableStyleBig center WidthAuto">

@@ -33,7 +33,7 @@ function isAuthorized($strUsers, $strGroups, $UserName, $UserGroup) {
   return $isValid; 
 }
 
-$MM_restrictGoTo = "Index.php";
+$MM_restrictGoTo = "index.php";
 if (!((isset($_SESSION['MM_Username'])) && (isAuthorized("",$MM_authorizedUsers, $_SESSION['MM_Username'], $_SESSION['MM_UserGroup'])))) {   
   $MM_qsChar = "?";
   $MM_referrer = $_SERVER['PHP_SELF'];
@@ -97,11 +97,11 @@ $totalRows_ManageUsers = mysql_num_rows($ManageUsers);
               <table width="300" align="right">
                 <tr>
                   <td align="right"><label>User: <?php echo $_SESSION['MM_Username']; ?></label></td>
-                  <td align="right"><a class="link" href="LogOut.php">LogOut</a></td>
+                  <td align="right"><a class="link" href="logout.php">LogOut</a></td>
                 </tr>
                 <tr>
                		<td></td>
-                	<td align="right"><a class="link" href="Account.php">My Account</a></td>
+                	<td align="right"><a class="link" href="acc.php">My Account</a></td>
                 </tr>
               </table>
               
@@ -111,8 +111,8 @@ $totalRows_ManageUsers = mysql_num_rows($ManageUsers);
       </div>
     	<div id="contentLeft">
     	  <h2>Account info</h2><br>
-    	  <h2><a href="Update.php">Update Account</a></h2><br>
-    	  <h2><a href="LogOut.php">Log Out</a></h2><br>
+    	  <h2><a href="up.php">Update Account</a></h2><br>
+    	  <h2><a href="logout.php">Log Out</a></h2><br>
     	  <br>
     	</div>
     <div id="contentRight">

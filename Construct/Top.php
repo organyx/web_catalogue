@@ -37,7 +37,7 @@
   <div id="NavBar">
     	<nav>
         	<ul>
-            	<li><a href="#">Main</a></li>
+            	<li><a href="index.php">Main</a></li>
                 <li><a href="reg.php">Register</a></li>
                 <li><a href="forgot.php">Forgot Password</a></li>
               
