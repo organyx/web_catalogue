@@ -93,20 +93,28 @@ $queryString_ManageUsers = sprintf("&totalRows_ManageUsers=%d%s", $totalRows_Man
           <td align="right" valign="top">Showing:&nbsp;<?php echo ($startRow_ManageUsers + 1) ?> to <?php echo min($startRow_ManageUsers + $maxRows_ManageUsers, $totalRows_ManageUsers) ?> of <?php echo $totalRows_ManageUsers ?></td>
         </tr>
         <tr>
-          <td align="center" valign="top"><?php if ($totalRows_ManageUsers > 0) { $i = 0;// Show if recordset not empty ?>
+          <td align="center" valign="top"><?php if ($totalRows_ManageUsers > 0) { // Show if recordset not empty ?>
               <?php do { ?>
-                <table border="1" align="center" class="TableStyleIndex TableStyle center WidthAuto">
-                
-                  <tr><?php echo ($startRow_ManageUsers + 1) + $i ?>
-                    <td width="400" height="50" align="center" ><h2><a href="UserWeb.php?a=<?php echo $row_ManageUsers['userID']; ?>"><?php echo $row_ManageUsers['title']; ?></a></h2></td>
-                    <td width="200" rowspan="2" align="center" ><a class="fancybox"  href="<?php echo $row_ManageUsers['preview_thumb']; ?>"> <img src="<?php echo $row_ManageUsers['preview_thumb']; ?>" alt="" height="140px" width="140px" class="img-thumbnail"/></a></td>
+                <table class="TableStyleIndex TableStyle center WidthAuto">
+                  <tr>
+                    <td width="400" height="33" align="center" > <a href="UserWeb.php?a=<?php echo $row_ManageUsers['userID']; ?>"><?php echo $row_ManageUsers['title']; ?></a></td>
+                    <td width="150" height="50" rowspan="3" class="TableStyleBorderLeft"><a class="fancybox"  href="<?php echo $row_ManageUsers['preview_thumb']; ?>"> <img src="<?php echo $row_ManageUsers['preview_thumb']; ?>" alt="" height="140px" width="140px" class="img-thumbnail"/></a></td>
                   </tr>
                   <tr>
-                    <td height="50" align="center" ><a href="<?php echo $row_ManageUsers['url']; ?>"><?php echo $row_ManageUsers['url']; ?></a></td>
+                    <td width="400" height="33"><table>
+                        <tr>
+                          <td width="210" height="30" align="center"><a target="_blank" href="<?php echo $row_ManageUsers['url']; ?>"><?php echo $row_ManageUsers['url']; ?></a></td>
+                          <td width="210" height="30" align="center">Language: <?php echo $row_ManageUsers['language']; ?></td>
+                        </tr>
+                      </table>
+                      <a href="<?php echo $row_ManageUsers['url']; ?>"></a></td>
+                  </tr>
+                  <tr>
+                    <td width="400" height="64" valign="top"><?php echo $row_ManageUsers['description']; ?></td>
                   </tr>
                 </table>
                 <br>
-                <?php $i++;} while ($row_ManageUsers = mysql_fetch_assoc($ManageUsers)); ?>
+                <?php } while ($row_ManageUsers = mysql_fetch_assoc($ManageUsers)); ?>
           <?php } // Show if recordset not empty ?></td>
         </tr>
         <tr>

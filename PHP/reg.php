@@ -40,6 +40,27 @@ $MM_flag="MM_insert";
 if (isset($_POST[$MM_flag])) {
   $MM_dupKeyRedirect="Register.php";
   $loginUsername = $_POST['Email'];
+  $LoginRS__query = sprintf("SELECT email FROM users WHERE email=%s", GetSQLValueString($loginUsername, "text"));
+  mysql_select_db($database_WebCatalogue, $WebCatalogue);
+  $LoginRS=mysql_query($LoginRS__query, $WebCatalogue) or die(mysql_error());
+  $loginFoundUser = mysql_num_rows($LoginRS);
+
+  //if there is a row in the database, the username was found - can not add the requested username
+  if($loginFoundUser){
+    $MM_qsChar = "?";
+    //append the username to the redirect page
+    if (substr_count($MM_dupKeyRedirect,"?") >=1) $MM_qsChar = "&";
+    $MM_dupKeyRedirect = $MM_dupKeyRedirect . $MM_qsChar ."requsername=".$loginUsername;
+    header ("Location: $MM_dupKeyRedirect");
+    exit;
+  }
+}
+
+// *** Redirect if username exists
+$MM_flag="MM_insert";
+if (isset($_POST[$MM_flag])) {
+  $MM_dupKeyRedirect="Register.php";
+  $loginUsername = $_POST['Email'];
   $LoginRS__query = sprintf("SELECT email FROM `users` WHERE email=%s", GetSQLValueString($loginUsername, "text"));
   mysql_select_db($database_WebCatalogue, $WebCatalogue);
   $LoginRS=mysql_query($LoginRS__query, $WebCatalogue) or die(mysql_error());
