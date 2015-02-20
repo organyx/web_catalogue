@@ -9,6 +9,7 @@
 <link href="CSS/Layout.css" rel="stylesheet" type="text/css">
 <link href="CSS/Menu.css" rel="stylesheet" type="text/css">
 
+
 <meta charset="utf-8">
 <title>Registration Page</title>
 </head>

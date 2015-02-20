@@ -213,7 +213,7 @@ $totalRows_Registration = mysql_num_rows($Registration);
               <tr>
                 <td><table >
                   <tr class="updateLayout">
-                    <td><label for="FirstName">
+                    <td ><label for="FirstName">
                       <h6>First Name <span class="required">*</span> :</h6>
                       <br>
                       </label>

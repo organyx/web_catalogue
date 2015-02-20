@@ -112,7 +112,7 @@ $totalRows_SelectedUser = mysql_num_rows($SelectedUser);
 
 
 <div id="PageHeading">
-    	  <h1>Welcome,  <?php echo $row_User['first_name']; ?> <?php echo $row_User['last_name']; ?>!</h1>
+    	  <h1><?php echo $row_User['first_name']; ?> <?php echo $row_User['last_name']; ?></h1>
       </div>
     	<div id="contentLeft">
     	  <h2>Account info</h2><br>
