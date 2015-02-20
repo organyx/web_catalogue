@@ -1,6 +1,7 @@
+<?php @session_start(); ?>
 <?php require_once('Connections/WebCatalogue.php'); ?>
 <?php require_once('Helpers/security.php'); ?>
-
+<?php include "PHP/adminAccess.php"?>
 <!doctype html>
 <html>
 <head>
@@ -9,7 +10,7 @@
 <link href="CSS/Menu.css" rel="stylesheet" type="text/css">
 
 <meta charset="utf-8">
-<title>Forgot Password</title>
+<title>Admin Control Panel</title>
 </head>
 
 <body>
@@ -18,32 +19,38 @@
   <div id="NavBar">
     	<nav>
         	<ul>
-                <li><a href="Index.php">Main</a></li>
+              <li><a href="Index.php">Main</a></li>
                 <li><a href="Register.php">Register</a></li>
-                <li><a href="ForgotPassword.php">Forgot Password</a></li>
-            </ul>
+                <li><a href="ForgotPassword.php">Forgot Password</a></li>      
+          </ul>
             
-                  
-              <div id="log">
+             <div id="log">
             <?php include "log.php" ?>
             </div>
-                 
-    </nav>
+        </nav>
   </div>
   <div id="Content">
     	<div id="PageHeading">
-    	  <h1>Forgot Password</h1>
+    	  <h1>Admin CP</h1>
    	  </div>
     	<div id="contentLeft">
-    	  
-    	  <h6>Type in your email <br>to recieve your password</h6>
+    	  <h2>Admin links</h2><br>
+    	  <h2><a href="Account.php">My Account</a></h2><br>
+          <h2><a href="AdminManageUsers.php" >Manage Users</a></h2>
+    	  <p>&nbsp;</p>
+    	  <br>
+    	  <h6>links</h6>
     	</div>
-    <div id="contentRight">
-      <?php include "PHP/forgotpass.php"?>
-    </div>
+    <div id="contentRight"></div>
   </div>
   <div id="Footer">
+
+    	<p><a href="Admin.php">Admin</a></p>
+
   </div>
 </div>
 </body>
 </html>
+<?php
+mysql_free_result($User);
+?>

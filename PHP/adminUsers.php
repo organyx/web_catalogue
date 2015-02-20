@@ -1,7 +1,5 @@
-<?php @session_start(); 
-	require_once('../Helpers/deleteUser.php');				?>
-<?php require_once('../Helpers/security.php'); ?>
-<?php require_once('../Connections/WebCatalogue.php'); ?>
+<?php require_once('Helpers/security.php'); ?>
+<?php require_once('Connections/WebCatalogue.php'); ?>
 <?php
 if (!isset($_SESSION)) {
   session_start();
@@ -35,7 +33,7 @@ function isAuthorized($strUsers, $strGroups, $UserName, $UserGroup) {
   return $isValid; 
 }
 
-$MM_restrictGoTo = "../Login.php";
+$MM_restrictGoTo = "Login.php";
 if (!((isset($_SESSION['MM_Username'])) && (isAuthorized("",$MM_authorizedUsers, $_SESSION['MM_Username'], $_SESSION['MM_UserGroup'])))) {   
   $MM_qsChar = "?";
   $MM_referrer = $_SERVER['PHP_SELF'];
@@ -166,55 +164,8 @@ if (!empty($_SERVER['QUERY_STRING'])) {
 }
 $queryString_ManageUsers = sprintf("&totalRows_ManageUsers=%d%s", $totalRows_ManageUsers, $queryString_ManageUsers);
 ?>
-<!doctype html>
-<html>
-<head>
 
-<link href="../CSS/Layout.css" rel="stylesheet" type="text/css">
-<link href="../CSS/Menu.css" rel="stylesheet" type="text/css">
-
-<meta charset="utf-8">
-<title>Admin Control Panel</title>
-</head>
-
-<body>
-<div id="Holder">
-  <div id="Header"></div>
-  <div id="NavBar">
-    	<nav>
-        	<ul>
-         		<li><a href="../Index.php">Main</a></li>
-                <li><a href="../Register.php">Register</a></li>
-                <li><a href="../ForgotPassword.php">Forgot Password</a></li>
-            </ul>
-              <?php if(isset($_SESSION['MM_Username'])) { ?>
-              <table width="300" align="right">
-                <tr>
-                  <td align="right"><label>User: <?php echo $_SESSION['MM_Username']; ?></label></td>
-                  <td align="right"><a class="link" href="../LogOut.php">LogOut</a></td>
-                </tr>
-                <tr>
-               		<td></td>
-                	<td align="right"><a class="link" href="../Account.php">My Account</a></td>
-                </tr>
-              </table>
-              
-              <?php }  ?>
-        </nav>
-  </div>
-  <div id="Content">
-    	<div id="PageHeading">
-    	  <h1>Admin CP</h1>
-   	  </div>
-    	<div id="contentLeft">
-    	  <h2>Admin links</h2>
-    	  <p><?php echo $row_User['email']; ?></p>
-    	  <br>
-    	  <h2><a href="../Account.php">My Account</a></h2><br>
-          <h2><a href="../LogOut.php">Log Out</a></h2>
-    	</div>
-    <div id="contentRight">
-      <table class="TableStyleBig center WidthAuto">
+<table class="TableStyleBig center WidthAuto">
         <tr>
           <td align="right" valign="top">Showing:&nbsp;<?php echo ($startRow_ManageUsers + 1) ?> to <?php echo min($startRow_ManageUsers + $maxRows_ManageUsers, $totalRows_ManageUsers) ?> of <?php echo $totalRows_ManageUsers ?></td>
         </tr>
@@ -272,16 +223,6 @@ $queryString_ManageUsers = sprintf("&totalRows_ManageUsers=%d%s", $totalRows_Man
   <?php } // Show if not first page ?>          </td>
         </tr>
       </table>
-    </div>
-  </div>
-  <div id="Footer">
-
-    	<p><a href="Admin.php">Admin</a></p>
-
-  </div>
-</div>
-</body>
-</html>
 <?php
 mysql_free_result($User);
 

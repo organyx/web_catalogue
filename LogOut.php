@@ -89,7 +89,7 @@ $totalRows_LogOut = mysql_num_rows($LogOut);
     	</div>
     <div id="contentRight"></div>
   </div>
-  <div id="Footer"><p><a href="backend/Admin.php">Admin</a></p></div>
+  <div id="Footer"><p><a href="Admin.php">Admin</a></p></div>
 </div>
 </body>
 </html>
