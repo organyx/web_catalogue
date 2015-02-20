@@ -114,8 +114,16 @@ if (isset($_POST['Email'])) {
   $LoginRS = mysql_query($LoginRS__query, $WebCatalogue) or die(mysql_error());
   $loginFoundUser = mysql_num_rows($LoginRS);
   if ($loginFoundUser) {
-    
+	 
+   
     $loginStrGroup  = mysql_result($LoginRS,0,'Userlevel');
+	
+ 
+	 if(isset($_SESSION['lvl'])){
+         $_SESSION['lvl']=$loginStrGroup;
+    }else{
+         $_SESSION['lvl']=$loginStrGroup;
+    }
     
 	if (PHP_VERSION >= 5.1) {session_regenerate_id(true);} else {session_regenerate_id();}
     //declare two session variables and assign them

@@ -121,14 +121,14 @@ $totalRows_SelectedUser = mysql_num_rows($SelectedUser);
     	  <br>
     	</div>
     <div id="contentRight">
-      <table class="TableStyleBig center WidthAuto">
+      <table  class="TableStyleBig center WidthAuto">
         <tr>
-          <td align="center">Account: <?php echo $row_SelectedUser['email']; ?></td>
+          <td align="center">&nbsp;</td>
         </tr>
         <tr>
-          <td><table class="TableStyleAccount TableStyle center WidthAuto">
+          <td><table id="selectedUser" class="TableStyle center WidthAuto">
             <tr>
-              <td align="right" valign="top">&nbsp;</td>
+              <td align="left" valign="top">Email: <?php echo $row_SelectedUser['email']; ?></td>
               <td align="right" valign="top">Registration date : </td>
             </tr>
             <tr>
@@ -146,10 +146,10 @@ $totalRows_SelectedUser = mysql_num_rows($SelectedUser);
               <td>Languages: <?php echo $row_SelectedUser['language']; ?></td>
               </tr>
             <tr>
-              <td>Description:</td>
+              <td align="left" valign="bottom">Description:</td>
               </tr>
             <tr>
-              <td colspan="2"><?php echo $row_SelectedUser['description']; ?></td>
+              <td colspan="2" align="center"><?php echo $row_SelectedUser['description']; ?></td>
             </tr>
           </table></td>
         </tr>

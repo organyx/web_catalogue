@@ -110,6 +110,11 @@ h6 {
 	font-size: 14px;
 }
 
+#selectedUser {
+	border:hidden;
+	width:500px;
+}
+
 .styletxtfield {
 	border: 1px solid #666;
 	border-radius:6px;

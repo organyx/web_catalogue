@@ -98,6 +98,9 @@ $totalRows_ManageUsers = mysql_num_rows($ManageUsers);
       </div>
     	<div id="contentLeft">
     	  <h2>Account info</h2><br>
+          <?php if ($_SESSION['lvl'] == 2) { ?>
+          <h2><a href="AdminManageUsers.php">Manage Users</a></h2><br>
+          <?php } ?>
     	  <h2><a href="Update.php">Update Account</a></h2><br>
     	  <h2><a href="LogOut.php">Log Out</a></h2><br>
     	  <br>
@@ -110,7 +113,7 @@ $totalRows_ManageUsers = mysql_num_rows($ManageUsers);
         <tr>
           <td><table class="TableStyleAccount TableStyle center WidthAuto">
             <tr>
-              <td align="right" valign="top">&nbsp;</td>
+              <td valign="top">&nbsp;</td>
               <td align="right" valign="top">Registration date : </td>
             </tr>
             <tr>
