@@ -97,7 +97,7 @@ $queryString_ManageUsers = sprintf("&totalRows_ManageUsers=%d%s", $totalRows_Man
               <?php do { ?>
                 <table class="TableStyleIndex TableStyle center WidthAuto">
                   <tr>
-                    <td width="400" height="33" align="center" ><?php echo $row_ManageUsers['title']; ?></td>
+                    <td width="400" height="33" align="center" > <a href="UserWeb.php?a=<?php echo $row_ManageUsers['userID']; ?>"><?php echo $row_ManageUsers['title']; ?></a></td>
                     <td width="150" height="50" rowspan="3" class="TableStyleBorderLeft"><a class="fancybox"  href="<?php echo $row_ManageUsers['preview_thumb']; ?>"> <img src="<?php echo $row_ManageUsers['preview_thumb']; ?>" alt="" height="140px" width="140px" class="img-thumbnail"/></a></td>
                   </tr>
                   <tr>
