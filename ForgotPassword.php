@@ -7,6 +7,10 @@
 
 <link href="CSS/Layout.css" rel="stylesheet" type="text/css">
 <link href="CSS/Menu.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="Javascript/jquery-2.1.3.min.js"></script>
+<script type="text/javascript" src="Javascript/w2ui-1.4.2.min.js"></script>
+<link rel="stylesheet" type="text/css" href="Javascript/w2ui-1.4.2.min.css" />
+<script type="text/javascript" src="Javascript/newpass.js"></script>
 
 <meta charset="utf-8">
 <title>Forgot Password</title>
@@ -39,7 +43,21 @@
     	  <h6>Type in your email <br>to recieve your password</h6>
     	</div>
     <div id="contentRight">
-      <?php include "PHP/forgotpass.php"?>
+     	<div><p id="returnmessage"></p></div>
+        <div id="form" style="width: 650px;">
+        <div class="w2ui-page page-0">
+            <div class="w2ui-field">
+                <label>Email:</label>
+                <div>
+                    <input name="email" type="email" id="email" maxlength="100" size="60"/>
+                </div>
+            </div>
+        </div>
+    
+        <div class="w2ui-buttons">
+            <button class="btn" name="send">Send</button>
+        </div>
+    </div>
     </div>
   </div>
   <div id="Footer">

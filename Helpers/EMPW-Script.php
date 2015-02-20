@@ -1,6 +1,6 @@
 <?php 
 	@session_start();
-	$_SESSION['EMPW'] = $_POST['EMPWEmail'];
+	$_SESSION['EMPW'] = $_POST['email1'];
 	require_once('security.php');
  ?>
 <?php require_once('../Connections/WebCatalogue.php'); ?>
@@ -66,7 +66,7 @@ if($totalRows_EmailPassword > 0)
 }
 else
 {
-	echo "Fail. Try again";
+	echo "Wrong Email";
 }
 
 

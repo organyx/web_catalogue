@@ -32,15 +32,15 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
 ?>
 
 
-      <form action="Helpers/EMPW-Script.php" method="post" name="EMPWForm" id="EMPWForm"> 
-      <table class="center TableStyleAccount WidthAuto">
-      <tr><td>&nbsp;</td></tr>
+      <form  name="EMPWForm" id="EMPWForm"> 
+      <table class="center TableStyleAccount WidthAuto w2ui-page page-0">
+      <tr><td><p id="returnmessage"></p></td></tr>
         <tr>
-          <td> <label for="EMPWEmail"><h6>Email:</h6><br></label>
+          <td class="w2ui-field"> <label for="EMPWEmail"><h6>Email:</h6><br></label>
         		<input name="EMPWEmail" type="text" class="styletxtfield" id="EMPWEmail"></td>
         </tr>
         <tr>
-          <td><input type="submit" name="EMPWButton" id="EMPWButton" value="Email Password"></td>
+          <td class="w2ui-buttons"><input type="submit" name="EMPWButton" id="EMPWButton" class="btn"  value="Email Password"></td>
         </tr>
         <tr>
           <td>&nbsp;</td>
