@@ -163,4 +163,3 @@ mysql_free_result($User);
 
 mysql_free_result($SelectedUser);
 ?>
-    

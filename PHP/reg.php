@@ -40,27 +40,6 @@ $MM_flag="MM_insert";
 if (isset($_POST[$MM_flag])) {
   $MM_dupKeyRedirect="Register.php";
   $loginUsername = $_POST['Email'];
-  $LoginRS__query = sprintf("SELECT email FROM users WHERE email=%s", GetSQLValueString($loginUsername, "text"));
-  mysql_select_db($database_WebCatalogue, $WebCatalogue);
-  $LoginRS=mysql_query($LoginRS__query, $WebCatalogue) or die(mysql_error());
-  $loginFoundUser = mysql_num_rows($LoginRS);
-
-  //if there is a row in the database, the username was found - can not add the requested username
-  if($loginFoundUser){
-    $MM_qsChar = "?";
-    //append the username to the redirect page
-    if (substr_count($MM_dupKeyRedirect,"?") >=1) $MM_qsChar = "&";
-    $MM_dupKeyRedirect = $MM_dupKeyRedirect . $MM_qsChar ."requsername=".$loginUsername;
-    header ("Location: $MM_dupKeyRedirect");
-    exit;
-  }
-}
-
-// *** Redirect if username exists
-$MM_flag="MM_insert";
-if (isset($_POST[$MM_flag])) {
-  $MM_dupKeyRedirect="Register.php";
-  $loginUsername = $_POST['Email'];
   $LoginRS__query = sprintf("SELECT email FROM `users` WHERE email=%s", GetSQLValueString($loginUsername, "text"));
   mysql_select_db($database_WebCatalogue, $WebCatalogue);
   $LoginRS=mysql_query($LoginRS__query, $WebCatalogue) or die(mysql_error());
@@ -184,7 +163,7 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "RegisterForm")) {
   mysql_select_db($database_WebCatalogue, $WebCatalogue);
   $Result1 = mysql_query($insertSQL, $WebCatalogue) or die(mysql_error());
 
-  $insertGoTo = "Index.php";
+  $insertGoTo = "Register.php";
   if (isset($_SERVER['QUERY_STRING'])) {
     $insertGoTo .= (strpos($insertGoTo, '?')) ? "&" : "?";
     $insertGoTo .= $_SERVER['QUERY_STRING'];
@@ -197,12 +176,10 @@ $query_Registration = "SELECT * FROM `users`";
 $Registration = mysql_query($query_Registration, $WebCatalogue) or die(mysql_error());
 $row_Registration = mysql_fetch_assoc($Registration);
 $totalRows_Registration = mysql_num_rows($Registration);
-$query_Registration = "SELECT * FROM users";
-$Registration = mysql_query($query_Registration, $WebCatalogue) or die(mysql_error());
-$row_Registration = mysql_fetch_assoc($Registration);
-$totalRows_Registration = mysql_num_rows($Registration);
+
 ?>
 
+<div id="returnmessage"><p></p></div>
 <form action="<?php echo $editFormAction; ?>" method="POST" enctype="multipart/form-data" name="RegisterForm" id="RegisterForm">
         <table class="TableStyleBig center WidthAuto">
           <tr>
