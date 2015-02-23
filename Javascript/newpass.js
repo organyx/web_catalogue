@@ -20,6 +20,7 @@ $(function () {
 				// Returns successful data submission message when the entered information is stored in database.
 				$.post("Helpers/EMPW-Script.php",{ email1: email},
 				   function(data) {
+					   console.log(data);
 								$('#returnmessage').append(data);//Append returned message to message paragraph
 									if(data=="Your Query has been received, We will contact you soon."){
 										$('#form')[0].reset();//To reset form fields on success
